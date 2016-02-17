@@ -10,7 +10,7 @@
 %\titlehead{Deutsches Zentrum für Luft- und Raumfahrt e.V.}
 %\subject{Art des Dokuments}
 \title{Automatisierung und Kreativität}
-\subtitle{Ist die Komplexitätsgrenze sicherheitskritischer Systeme erreicht?}
+\subtitle{Ist die Grenze beherrschbarer Komplexität\\in sicherheitskritischen Systemen erreicht?}
 \author{Dr. Robert Hilbrich}
 \date{}
 %\publishers{Platz für Betreuer o.\,ä.}
@@ -25,7 +25,7 @@
 \label{sec:einfuhrung}
 
 Das Ende der Ära der Lochkarten zur manuellen Programmierung war zugleich auch der Beginn eines deutlich erweiterten Aufgabenspektrums der Computersysteme.
-Neben ihrer Rolle als Laufzeitplattform und Ressourcenlieferant zur Ausführung von manuell entwickelten Codes, konnten sie im Zuge ihrer zunehmenden Leistungsfähigkeit auch die \emph{Entwicklung} von Code unterstützen.
+Neben ihrer Rolle als Laufzeitplattform und Ressourcenlieferant zur Ausführung von manuell entwickelten Codes, konnten sie im Zuge ihrer zunehmenden Leistungsfähigkeit auch die \emph{Entwicklung} von Codes unterstützen.
 Mittlerweile ist die Softwareentwicklung ohne die Unterstützung von Computern nicht mehr sinnvoll durchzuführen. 
 Computer transformieren manuell entwickelten Code aus Hochsprachen in Maschinensprache, sie analysieren die Codes auf Speicherlecks oder ungültige Ressourcenzugriffe und validieren deren Korrektheit mit Hilfe einer Vielzahl von Testfällen "= alles weitgehend automatisch.
 
@@ -40,17 +40,74 @@ So übernimmt der Mensch die schöpferischen Tätigkeiten, durch die er etwas Neues
 Die stupiden und repetitiven Tätigkeiten der Entwicklung werden dagegen durch den Computer übernommen und von ihm entsprechend einer vordefinierten Art und Weise in identischer Manier ausgeführt.
 Aufgrund dieser Arbeitsteilung ist die Komplexität der zu entwickelnden Systeme durch die menschliche Verarbeitungskapazität begrenzt, denn jedes Entwicklungsvorhaben ist zunächst auf die Durchführung von kreativ"=konstruktiven Tätigkeiten angewiesen.
 
-Bei der Entwicklung von komplexen sicherheitskritischen Systemen, zum Beispiel der Flugsteuerung an Bord eines modernen Flugzeugs, sehen sich Entwickler mittlerweile mit der Herausforderung konfrontiert, auch kreativ"=konstruktive Tätigkeiten zu automatisieren.
-Dies ist einerseits die Folge einer stark gestiegenen Komplexität in den funktionalen Anforderungen der Systeme in Verbindung mit einer exponentiell gestiegenen Komplexität der technologischen Bausteine, die für die Entwicklung zur Verfügung stehen.
+Bei der Entwicklung von komplexen sicherheitskritischen Systemen, zum Beispiel der Steuerungssysteme an Bord eines modernen Flugzeugs, sehen sich Entwickler mittlerweile mit der Herausforderung konfrontiert, auch kreativ"=konstruktive Tätigkeiten automatisieren zu müssen.
+Dies ist einerseits die Folge einer stark gestiegenen Komplexität in den funktionalen Anforderungen der Systeme in Verbindung mit einer exponentiell gestiegenen Komplexität der technologischen "`Bausteine"', die für die Synthese zur Verfügung stehen.
 Die vollständige und fehlerlose Berücksichtigung aller Anforderungen bei der Verwendung der technologischen Bausteine übersteigt bereits heute in vielen Fällen die menschliche Verarbeitungskapazität der Entwickler.
 
 Andererseits ist der Drang zur Automatisierung der kreativ"=konstruktiven Tätigkeiten auch eine Folge der hohen Anforderungen an die funktionale Korrektheit und Zuverlässigkeit dieser Systeme.
-In der Praxis lässt sich die vollständige Korrektheit eines derartigen Systeme mittlerweile nicht mehr allein durch die extrinsische Analyse von dessen Verhalten nachweisen.
-Aufgrund der Vielzahl der dann zu prüfenden Systemzustände ist ein derartiges Vorgehen in der Praxis nicht länger ökonomisch sinnvoll.
+In der Praxis lässt sich die vollständige Korrektheit eines derartigen Systeme mittlerweile nicht mehr allein durch die extrinsische Beobachtung und Analyse von dessen Verhalten überprüfen.
+Aufgrund der Vielzahl der zu prüfenden Systemzustände ist ein derartiges Vorgehen zum vollständigen Analyse in der Praxis nicht länger ökonomisch sinnvoll.
 Daher muss die Korrektheit eines Systems verstärkt auf der Grundlage seines \emph{Konstruktionsprozesses} nachgewiesen werden. 
-Die Automatisierung der kreativ"=konstruktiven Tätigkeiten ist daher eine zentrale Herausforderung für die ingenieurwissenschaftliche Forschung, um die Weiterentwicklung dieser Klasse von Systemen zu ermöglichen und auch zukünftig deren Zuverlässigkeit und Korrektheit zu gewährleisten.  
+Die Automatisierung des Konstruktionsprozesses kritischer Artefakte ist daher eine zentrale Herausforderung für die ingenieurwissenschaftliche Forschung in diesem Bereich, um die Weiterentwicklung dieser Klasse von Systemen zu ermöglichen und zugleich auch zukünftig deren Zuverlässigkeit und Korrektheit zu gewährleisten.  
 
-Die zugrunde liegende Dissertation ...
+Die zugrunde liegende Dissertation befasst sich mit der automatisierten Konstruktion eines zentralen Artefakts sicherheitskritischer Systeme: der Zuweisung von Ressourcen, zum Beispiel der Rechenzeit auf einem Prozessor oder einem Teil des Arbeitsspeichers, zu den einzelnen Softwarekomponenten -- oder anders formuliert: der Platzierung der Softwarekomponenten auf den Ressourcen des Systems.
+Diese Zuweisung ist scheinbar unspektakulär, doch dieser Eindruck trügt.
+Eine "`richtige"' und "`ausreichende"' Zuweisung von Ressourcen, ist für das Gesamtsystem \emph{essentiell}.
+Sie ist die Grundvoraussetzung dafür, dass zeitkritische Steuerungsmodule, zum Beispiel das Airbagsteuergerät im Auto, zum "`richtigen"' Zeitpunkt über "`genügend"' Ressourcen zur Abarbeitung ihrer Steuerungslogiken verfügen.
+
+Mit der Einführung von modernen "`Mehrkern-"' Prozessoren, die eine parallele Ausführung von Softwarekomponenten erlauben, wurde die Möglichkeit zu einer starken Funktionsverdichtung in der Architektur von sicherheitskritischen Systemen geschaffen.
+Ein Mehrkern-Prozessor kann -- im Gegensatz zu einem klassischen Ein-Kern-Prozessor -- verschiedene Softwarekomponenten zur gleichen Zeit ausführen, so dass Geräte eingespart und damit die Effizienz des Systems gesteigert werden können.
+Die Ressourcenzuweisung ist damit nicht nur eine Grundvoraussetzung für die korrekte Funktionsweise des Systems, sondern zugleich auch der zentrale Ansatzpunkt für Optimierungen zur Steigerung der Ressourceneffizienz.
+
+Die Synthese einer solchen Zuweisung erfordert eine vollständige Koordination aller Ressourcenzugriffe der Softwarekomponenten bereits zum Zeitpunkt der Entwicklung. 
+Ihre Erstellung ist äußerst aufwändig und fehlerträchtig, denn sie ist sowohl mit der Komplexität der Anforderungen \emph{aller} Softwarekomponenten als auch der Komplexität \emph{aller} Ressourcen der Hardwareplattform konfrontiert.
+Während die Ressourcenzuweisung bei realen Systemen in der Vergangenheit noch manuell konstruiert werden konnte, ist spätestens mit der Einführung von Mehrkern-Prozessoren ein Komplexitätsniveau erreicht, bei dem eine Fortsetzung tradierter Vorgehensweisen nicht länger zielführend ist.
+
+Vor dem Hintergrund dieser Herausforderung wird in der zugrunde liegenden Dissertation ein automatisiertes Verfahren zur Konstruktion einer solchen Ressourcenzuweisung für Mehrkernprozessoren entwickelt und anhand von zwei Fallbeispielen für komplexe Systeme aus der Luft- und Raumfahrt erprobt.
+
+Mittlerweile wird dieses Verfahren in leicht angepasster Form bei einem Hersteller ziviler Flugzeuge für die Optimierung der Systemarchitektur eines Flugzeugtyps eingesetzt.
+Durch die Verwendung dieses Verfahrens konnte die benötigte Zeitdauer für die Konstruktion einer vollständigen und fehlerfreien Zuweisung von ca. 12-15~Monaten auf einen Zeitraum von etwa 5~Minuten reduziert werden.
+Die Kürze der Konstruktionsdauer ermöglichte erstmals die Synthese einer Vielzahl unterschiedlicher Zuweisungen, so dass erstmalig auch Entwurfsalternativen zur Optimierung verglichen und letztendlich Geräte eingespart werden konnten.
+
+In den folgenden Abschnitten ...
+
+\section{Ergebnisse der Dissertation}
+\label{sec:ergebn-der-diss}
+
+Hier kommt der Inhalt der Dissertation etwas stärker im Detail; dazu die Ergebnisse ...
+
+\section{Gesellschaftliche Bedeutung}
+\label{sec:gesellsch-bede}
+
+\begin{itemize}
+\item Zunächst kann damit die Entwicklung von Systemen beschleunigt werden
+\item Systeme können optimiert werden, so dass weniger Ressourcen benötigt werden 
+\item Weniger Fehler im System 
+\item ...
+\end{itemize}
+
+Aber, diese Arbeit ist ein guter Gegenstand, um Fragen nach der Beherrschbarkeit heutiger Technologien zu stellen und zu diskutieren
+
+\begin{itemize}
+\item Was sind die Nachteile die sich daraus ergeben?
+\item Ist es nicht sinnvoll, wenn sich Menschen so lange mit den Anforderungen beschäftigen?
+\item Sollten wir Dinge konstruieren und nutzen, deren Aufbau das Verständnis des Menschen übersteigt?
+\item ...
+\end{itemize}
+
+\section{Zusammenfassung}
+\label{sec:zusammenfassung}
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
