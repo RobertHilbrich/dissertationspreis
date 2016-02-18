@@ -10,7 +10,7 @@
 %\titlehead{Deutsches Zentrum für Luft- und Raumfahrt e.V.}
 %\subject{Art des Dokuments}
 \title{Automatisierung und Kreativität}
-\subtitle{Ist die Grenze beherrschbarer Komplexität\\in sicherheitskritischen Systemen erreicht?}
+\subtitle{Ist die Grenze beherrschbarer Komplexität erreicht?}
 \author{Dr. Robert Hilbrich}
 \date{}
 %\publishers{Platz für Betreuer o.\,ä.}
@@ -24,31 +24,70 @@
 \section{Einführung}
 \label{sec:einfuhrung}
 
-Das Ende der Ära der Lochkarten zur manuellen Programmierung war zugleich auch der Beginn eines deutlich erweiterten Aufgabenspektrums der Computersysteme.
-Neben ihrer Rolle als Laufzeitplattform und Ressourcenlieferant zur Ausführung von manuell entwickelten Codes, konnten sie im Zuge ihrer zunehmenden Leistungsfähigkeit auch die \emph{Entwicklung} von Codes unterstützen.
-Mittlerweile ist die Softwareentwicklung ohne die Unterstützung von Computern nicht mehr sinnvoll durchzuführen. 
-Computer transformieren manuell entwickelten Code aus Hochsprachen in Maschinensprache, sie analysieren die Codes auf Speicherlecks oder ungültige Ressourcenzugriffe und validieren deren Korrektheit mit Hilfe einer Vielzahl von Testfällen "= alles weitgehend automatisch.
+Der technologische Fortschritt unserer Gesellschaft spiegelt sich in der hohen Leistungsfähigkeit unserer Fahrzeuge wider.
+Piloten müssen ihre tonnenschweren Flugzeuge heute nur noch indirekt steuern, in dem sie über einen kleinen Joystick mit dem Steuerungssystem interagieren.
+Die Komplexität der richtigen Ansteuerung von Höhen"=, Seiten"= und Querruder bei gleichzeitiger Anpassung der Schubkraft tritt fast vollkommen in den Hintergrund.
+Autofahrer können sich durch eine Vielzahl von Assistenzsystemen bei der Fahrt unterstützen lassen.
+Unliebsame Aufgaben können sie an den \emph{Autobahn-Piloten}, den \emph{Stau}-Assistenten oder den \emph{Park}-Assistenten delegieren. 
+Der Schritt zu voll"=automatischen Fahrzeugen ist nicht mehr weit.
 
-Nicht nur bei der Entwicklung von Software konnten sich Computersysteme als hilfreiche Assistenten emanzipieren.
-Mittlerweile ist auch die Entwicklung von Hardware zwingend auf den Einsatz von Computern angewiesen.
-So werden die komplexen Steuerungs"= und Assistenzsysteme in Fahrzeugen und Flugzeugen beispielsweise nur noch mit Hilfe von Computersystemen entworfen.
-Dies ist notwendig, um die Komplexität der zu entwickelnden Systeme zu beherrschen und zugleich auch ökonomischen Randbedingungen zu genügen.
+Der \emph{Computer} in seiner Rolle als automatisiertes Steuersystem nimmt dem Menschen immer mehr Aufgaben ab.
+Dies betrifft insbesondere Aufgaben von denen unsere persönliche Sicherheit abhängt.
+Ein kleiner Fehler im Steuerungssystem eines Flugzeugs -- zum Beispiel ein kleiner Zeitversatz zwischen der Ansteuerung des linken und rechten Höhenruders -- kann bereits genügen, um das Flugzeug in einen aerodynamisch instabilen Zustand zu bringen.
+Im Auto können Ungenauigkeiten bei der Spur"=Erkennung eines \emph{Autobahn"=Piloten} schnell katastrophale Folgen haben.
 
-Obwohl sich die Leistungsfähigkeit der Rechentechnik und damit auch ihr Nutzen bei der der Unterstützung von Entwicklungstätigkeiten seit den Lochkarten deutlich erhöht hat, ist die grundlegende Arbeitsteilung zwischen dem Menschen und der Maschine erhalten geblieben.
-Während der menschliche Entwickler die \emph{kreativ"=konstruktiven} Tätigkeiten bei der Synthese von Komponenten und Artefakten übernimmt, sind die \emph{analytischen} und \emph{automatisierbaren} Tätigkeiten dem Computer vorbehalten.
-So übernimmt der Mensch die schöpferischen Tätigkeiten, durch die er etwas Neues und Originelles erschafft. 
-Die stupiden und repetitiven Tätigkeiten der Entwicklung werden dagegen durch den Computer übernommen und von ihm entsprechend einer vordefinierten Art und Weise in identischer Manier ausgeführt.
+Trotz dieser Risiken übergeben wir die Verantwortung für unser Wohlergehen immer stärker an Computersysteme und vertrauen auf deren Zuverlässigkeit.
+Die Statistik der Aus"= und Unfälle belegt, dass diese Entscheidung rückblickend richtig war.
+In Anbetracht der sprunghaften technologischen Entwicklungen in den letzten Jahren stellt sich die Frage, ob dieses Vertrauen auch \emph{zukünftig} gerechtfertigt ist.
+Sind unsere Entwicklungsmethoden und "=werkzeuge auch zukünftig "`mächtig"' genug, um die Komplexität der Entwicklung derartiger Systeme zu beherrschen?
+
+Die Steuersysteme im Auto und Flugzeug bestehen aus vielen vernetzten Computersystemen.
+Sie interagieren mit zahlreichen Sensoren und Aktuatoren, um ihren Aufgaben gerecht zu werden.
+Ein vollwertiges "`Fly-by-Wire"' Steuersystem setzt sich aus ca. 40 vernetzten Computersystemen zusammen.
+Moderne Fahrzeuge beinhalten nicht selten mehr als 75 Computersysteme, um die Vielzahl an Funktionen zu realisieren.
+Die Entwicklung dieser Systeme gerät in Anbetracht dieser Komplexität an ihre Grenzen.
+Sie ist gefordert, alle Anforderungen zu erfüllen und dabei eine maximale Zuverlässigkeit bei minimalen Kosten zu erzielen.
+
+Diese Komplexität in der Entwicklung ist ohne den Einsatz von Computer nicht mehr zu bewältigen.
+Obwohl sich ihr Einsatzspektrum in der Vergangenheit deutlich erweitert hat, ist die grundlegende Arbeitsteilung zwischen dem menschlichen Entwickler und seinem elektronischen Assistenten noch immer unverändert.
+Während der Computer die wiederkehrenden Routine"= und Analyseaufgaben übernimmt, sind die kreativ"=konstruktiven Tätigkeiten noch immer dem Menschen überlassen.
+Der Mensch erschafft mit seiner Arbeit etwas Neues und Originelles -- zum Beispiel die Architektur einer neuen Flugsteuerung oder einen Algorithmus für eine neue Assistenzfunktion.
+Die Transformation dieser "`Artefakte"' in Maschinencode und deren Analyse auf Programmierfehler wird durch den Computer durchgeführt. 
 Aufgrund dieser Arbeitsteilung ist die Komplexität der zu entwickelnden Systeme durch die menschliche Verarbeitungskapazität begrenzt, denn jedes Entwicklungsvorhaben ist zunächst auf die Durchführung von kreativ"=konstruktiven Tätigkeiten angewiesen.
+
+Grundsätzlich muss der Entwickler dazu die Anforderungen an das System verinnerlichen und mit den Eigenschaften und Fähigkeiten der zur Verfügung stehenden "`Lösungsbausteine"' in Übereinkunft bringen. 
+Eine vollständige und fehlerlose Berücksichtigung \emph{aller} Anforderungen bei der Systementwicklung übersteigt bereits heute in vielen Fällen die Verarbeitungskapazität der Entwickler.
+Spätestens mit der Nutzung von Mehrkernprozessoren, die eine parallele Ausführung verschiedene Softwaremodule zur gleichen Zeit ermöglichen, ist die Grenze der sicher beherrschbaren Komplexität überschritten.
+Eine a~priori Abschätzung \emph{aller} Auswirkungen dieser Parallelität überschreitet das Vermögen menschlicher Entwickler.
+
+Die gestiegene Komplexität der Systeme führt nicht nur die kreativ"=konstruktiven Tätigkeiten der Entwicklung an ihre Grenzen.
+Auch die automatisierten Verfahren zum Testen der entwickelten Systeme sind diesem Anstieg nicht mehr vollumfänglich gewachsen.
+Der Nachweis über die \emph{vollständige} Korrektheit eines derartigen Systeme unter \emph{allen} Randbedingungen lässt sich nicht mehr allein durch die Beobachtung von dessen Verhalten erbringen.
+Aufgrund der Vielzahl der dann zu prüfenden System"= und Umgebungszustände ist ein derartiges Vorgehen nicht länger ökonomisch sinnvoll.
+
+Die Grenze ist erreicht; 
+
+
+
+
+
+\textbf{ALT}
+
+
 
 Bei der Entwicklung von komplexen sicherheitskritischen Systemen, zum Beispiel der Steuerungssysteme an Bord eines modernen Flugzeugs, sehen sich Entwickler mittlerweile mit der Herausforderung konfrontiert, auch kreativ"=konstruktive Tätigkeiten automatisieren zu müssen.
 Dies ist einerseits die Folge einer stark gestiegenen Komplexität in den funktionalen Anforderungen der Systeme in Verbindung mit einer exponentiell gestiegenen Komplexität der technologischen "`Bausteine"', die für die Synthese zur Verfügung stehen.
-Die vollständige und fehlerlose Berücksichtigung aller Anforderungen bei der Verwendung der technologischen Bausteine übersteigt bereits heute in vielen Fällen die menschliche Verarbeitungskapazität der Entwickler.
+
 
 Andererseits ist der Drang zur Automatisierung der kreativ"=konstruktiven Tätigkeiten auch eine Folge der hohen Anforderungen an die funktionale Korrektheit und Zuverlässigkeit dieser Systeme.
+
 In der Praxis lässt sich die vollständige Korrektheit eines derartigen Systeme mittlerweile nicht mehr allein durch die extrinsische Beobachtung und Analyse von dessen Verhalten überprüfen.
 Aufgrund der Vielzahl der zu prüfenden Systemzustände ist ein derartiges Vorgehen zum vollständigen Analyse in der Praxis nicht länger ökonomisch sinnvoll.
 Daher muss die Korrektheit eines Systems verstärkt auf der Grundlage seines \emph{Konstruktionsprozesses} nachgewiesen werden. 
 Die Automatisierung des Konstruktionsprozesses kritischer Artefakte ist daher eine zentrale Herausforderung für die ingenieurwissenschaftliche Forschung in diesem Bereich, um die Weiterentwicklung dieser Klasse von Systemen zu ermöglichen und zugleich auch zukünftig deren Zuverlässigkeit und Korrektheit zu gewährleisten.  
+
+
+\textbf{DISSERTATION}
 
 Die zugrunde liegende Dissertation befasst sich mit der automatisierten Konstruktion eines zentralen Artefakts sicherheitskritischer Systeme: der Zuweisung von Ressourcen, zum Beispiel der Rechenzeit auf einem Prozessor oder einem Teil des Arbeitsspeichers, zu den einzelnen Softwarekomponenten -- oder anders formuliert: der Platzierung der Softwarekomponenten auf den Ressourcen des Systems.
 Diese Zuweisung ist scheinbar unspektakulär, doch dieser Eindruck trügt.
