@@ -36,23 +36,23 @@ Dies betrifft insbesondere Aufgaben von denen unsere persönliche Sicherheit abhä
 Ein kleiner Fehler im Steuerungssystem eines Flugzeugs -- zum Beispiel ein kleiner Zeitversatz zwischen der Ansteuerung des linken und rechten Höhenruders -- kann bereits genügen, um das Flugzeug in einen aerodynamisch instabilen Zustand zu bringen.
 Im Auto können Ungenauigkeiten bei der Spur"=Erkennung eines \emph{Autobahn"=Piloten} schnell katastrophale Folgen haben.
 
-Trotz dieser Risiken übergeben wir die Verantwortung für unser Wohlergehen immer stärker an Computersysteme und vertrauen auf deren Zuverlässigkeit.
+Trotz dieser Risiken übergeben wir die Verantwortung für unser Wohlergehen immer häufiger an Computersysteme und vertrauen auf deren Zuverlässigkeit.
 Die Statistik der Aus"= und Unfälle belegt, dass diese Entscheidung rückblickend richtig war.
-In Anbetracht der sprunghaften technologischen Entwicklungen in den letzten Jahren stellt sich die Frage, ob dieses Vertrauen auch \emph{zukünftig} gerechtfertigt ist.
-Sind unsere Entwicklungsmethoden und "=werkzeuge auch zukünftig "`mächtig"' genug, um die Komplexität der Entwicklung derartiger Systeme zu beherrschen?
+In Anbetracht der sprunghaften technologischen Entwicklungen in den letzten Jahren stellt sich die jedoch Frage, ob dieses Vertrauen auch \emph{zukünftig} gerechtfertigt ist.
+Sind unsere Entwicklungsmethoden und "=werkzeuge auch zukünftig "`mächtig"' genug, um die Komplexität der Entwicklung derartiger Systeme sicher zu beherrschen?
 
 Die Steuersysteme im Auto und Flugzeug bestehen aus vielen vernetzten Computersystemen.
-Sie interagieren mit zahlreichen Sensoren und Aktuatoren, um ihren Aufgaben gerecht zu werden.
-Ein vollwertiges "`Fly-by-Wire"' Steuersystem setzt sich aus ca. 40 vernetzten Computersystemen zusammen.
+Sie interagieren mit zahlreichen Sensoren und Aktuatoren, um ihre Aufgaben zu erfüllen.
+Ein vollwertiges "`Fly-by-Wire"' Steuersystem für Verkehrsflugzeuge setzt sich aus ca. 40 vernetzten Computersystemen zusammen.
 Moderne Fahrzeuge beinhalten nicht selten mehr als 75 Computersysteme, um die Vielzahl an Funktionen zu realisieren.
 Die Entwicklung dieser Systeme gerät in Anbetracht dieser Komplexität an ihre Grenzen.
 Sie ist gefordert, alle Anforderungen zu erfüllen und dabei eine maximale Zuverlässigkeit bei minimalen Kosten zu erzielen.
 
-Diese Komplexität in der Entwicklung ist ohne den Einsatz von Computer nicht mehr zu bewältigen.
-Obwohl sich ihr Einsatzspektrum in der Vergangenheit deutlich erweitert hat, ist die grundlegende Arbeitsteilung zwischen dem menschlichen Entwickler und seinem elektronischen Assistenten noch immer unverändert.
-Während der Computer die wiederkehrenden Routine"= und Analyseaufgaben übernimmt, sind die kreativ"=konstruktiven Tätigkeiten noch immer dem Menschen überlassen.
+Diese Komplexität ist ohne den Einsatz von Computer in der Entwicklung nicht mehr zu bewältigen.
+Obwohl sich das Einsatzspektrum der Computer in diesem Bereich in den letzten Jahren deutlich erweitert hat, ist die grundlegende Arbeitsteilung zwischen dem menschlichen Entwickler und seinem elektronischen Assistenten noch immer unverändert.
+Während der Computer die wiederkehrenden \emph{Routine"= und Analyseaufgaben} übernimmt, sind die \emph{kreativ"=konstruktiven Tätigkeiten} noch immer dem Menschen überlassen.
 Der Mensch erschafft mit seiner Arbeit etwas Neues und Originelles -- zum Beispiel die Architektur einer neuen Flugsteuerung oder einen Algorithmus für eine neue Assistenzfunktion.
-Die Transformation dieser "`Artefakte"' in Maschinencode und deren Analyse auf Programmierfehler wird durch den Computer durchgeführt. 
+Die Transformation dieser neuen "`Artefakte"' in Maschinencode und deren Analyse auf Programmierfehler wird durch den Computer durchgeführt. 
 Aufgrund dieser Arbeitsteilung ist die Komplexität der zu entwickelnden Systeme durch die menschliche Verarbeitungskapazität begrenzt, denn jedes Entwicklungsvorhaben ist zunächst auf die Durchführung von kreativ"=konstruktiven Tätigkeiten angewiesen.
 
 Grundsätzlich muss der Entwickler dazu die Anforderungen an das System verinnerlichen und mit den Eigenschaften und Fähigkeiten der zur Verfügung stehenden "`Lösungsbausteine"' in Übereinkunft bringen. 
@@ -65,29 +65,22 @@ Auch die automatisierten Verfahren zum Testen der entwickelten Systeme sind dies
 Der Nachweis über die \emph{vollständige} Korrektheit eines derartigen Systeme unter \emph{allen} Randbedingungen lässt sich nicht mehr allein durch die Beobachtung von dessen Verhalten erbringen.
 Aufgrund der Vielzahl der dann zu prüfenden System"= und Umgebungszustände ist ein derartiges Vorgehen nicht länger ökonomisch sinnvoll.
 
-Die Grenze ist erreicht; 
+Die Grenze der Mächtigkeit der etablierten Entwicklungsmethoden und "=werkzeuge ist erreicht.
+Ihre Weiterentwicklung ist die Voraussetzung, um die hohe Zuverlässigkeit der Systeme auch  zukünftig zu gewährleisten.
+Ein vielversprechender Ansatz zur Lösung dieser Problematik liegt in der \emph{Automatisierung der kreativ"=konstruktiven Tätigkeiten}. 
+Dies bricht mit der traditionellen Arbeitsteilung in der Entwicklung.
+Die Rolle des menschlichen Entwicklers wird auf die korrekte und vollständige Spezifikation von Anforderungen reduziert, zu denen der Computer ein geeignetes "`Artefakt"' automatisiert und fehlerfrei konstruiert.
+
+Falls sich dieser Ansatz realisieren lässt, sind seine Vorteile vielfältig.
+Zunächst sind Computer wesentlich besser in der Lage, die gestellten Anforderungen und die technischen Möglichkeiten in Übereinkunft zu bringen.
+Die Grenze der beherrschbaren Komplexität der kreativ"=konstruktiven Tätigkeiten lässt sich damit nach oben verschieben.
+Zudem ergibt sich ein weiterer Vorteil aus der Automatisierung des Konstruktionsprozesses.
+Sie eröffnet die Möglichkeit, die Korrektheit eines Systems auf der Grundlage seines Konstruktionsprozesses zu begründen anstatt
+ dafür eine unvollständige Beobachtung des Verhaltens von außen zu verwenden.
+Daher ist die Automatisierung der kreativ"=konstruktiven Tätigkeiten eine zentrale Herausforderung für die ingenieurwissenschaftliche Forschung, um die Weiterentwicklung dieser Systeme zu ermöglichen und auch zukünftig deren Zuverlässigkeit zu gewährleisten.  
 
 
-
-
-
-\textbf{ALT}
-
-
-
-Bei der Entwicklung von komplexen sicherheitskritischen Systemen, zum Beispiel der Steuerungssysteme an Bord eines modernen Flugzeugs, sehen sich Entwickler mittlerweile mit der Herausforderung konfrontiert, auch kreativ"=konstruktive Tätigkeiten automatisieren zu müssen.
-Dies ist einerseits die Folge einer stark gestiegenen Komplexität in den funktionalen Anforderungen der Systeme in Verbindung mit einer exponentiell gestiegenen Komplexität der technologischen "`Bausteine"', die für die Synthese zur Verfügung stehen.
-
-
-Andererseits ist der Drang zur Automatisierung der kreativ"=konstruktiven Tätigkeiten auch eine Folge der hohen Anforderungen an die funktionale Korrektheit und Zuverlässigkeit dieser Systeme.
-
-In der Praxis lässt sich die vollständige Korrektheit eines derartigen Systeme mittlerweile nicht mehr allein durch die extrinsische Beobachtung und Analyse von dessen Verhalten überprüfen.
-Aufgrund der Vielzahl der zu prüfenden Systemzustände ist ein derartiges Vorgehen zum vollständigen Analyse in der Praxis nicht länger ökonomisch sinnvoll.
-Daher muss die Korrektheit eines Systems verstärkt auf der Grundlage seines \emph{Konstruktionsprozesses} nachgewiesen werden. 
-Die Automatisierung des Konstruktionsprozesses kritischer Artefakte ist daher eine zentrale Herausforderung für die ingenieurwissenschaftliche Forschung in diesem Bereich, um die Weiterentwicklung dieser Klasse von Systemen zu ermöglichen und zugleich auch zukünftig deren Zuverlässigkeit und Korrektheit zu gewährleisten.  
-
-
-\textbf{DISSERTATION}
+\textbf{NOCH NICHT ÜBERARBEITET}
 
 Die zugrunde liegende Dissertation befasst sich mit der automatisierten Konstruktion eines zentralen Artefakts sicherheitskritischer Systeme: der Zuweisung von Ressourcen, zum Beispiel der Rechenzeit auf einem Prozessor oder einem Teil des Arbeitsspeichers, zu den einzelnen Softwarekomponenten -- oder anders formuliert: der Platzierung der Softwarekomponenten auf den Ressourcen des Systems.
 Diese Zuweisung ist scheinbar unspektakulär, doch dieser Eindruck trügt.
