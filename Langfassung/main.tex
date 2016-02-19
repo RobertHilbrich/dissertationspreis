@@ -32,52 +32,51 @@ Unliebsame Aufgaben können sie an den \emph{Autobahn-Piloten}, den \emph{Stau}-A
 Der Schritt zu voll"=automatischen Fahrzeugen ist nicht mehr weit.
 
 Der \emph{Computer} in seiner Rolle als automatisiertes Steuersystem nimmt dem Menschen immer mehr Aufgaben ab.
-Dies betrifft insbesondere Aufgaben von denen unsere persönliche Sicherheit abhängt.
+Dies betrifft insbesondere Aufgaben, von denen unsere persönliche Sicherheit abhängt.
 Ein kleiner Fehler im Steuerungssystem eines Flugzeugs -- zum Beispiel ein kleiner Zeitversatz zwischen der Ansteuerung des linken und rechten Höhenruders -- kann bereits genügen, um das Flugzeug in einen aerodynamisch instabilen Zustand zu bringen.
 Im Auto können Ungenauigkeiten bei der Spur"=Erkennung eines \emph{Autobahn"=Piloten} schnell katastrophale Folgen haben.
 
 Trotz dieser Risiken übergeben wir die Verantwortung für unser Wohlergehen immer häufiger an Computersysteme und vertrauen auf deren Zuverlässigkeit.
 Die Statistik der Aus"= und Unfälle belegt, dass diese Entscheidung rückblickend richtig war.
-In Anbetracht der sprunghaften technologischen Entwicklungen in den letzten Jahren stellt sich die jedoch Frage, ob dieses Vertrauen auch \emph{zukünftig} gerechtfertigt ist.
+In Anbetracht der sprunghaften technologischen Entwicklungen in den letzten Jahren stellt sich jedoch die Frage, ob dieses Vertrauen auch \emph{zukünftig} gerechtfertigt ist.
 Sind unsere Entwicklungsmethoden und "=werkzeuge auch zukünftig "`mächtig"' genug, um die Komplexität der Entwicklung derartiger Systeme sicher zu beherrschen?
 
-Die Steuersysteme im Auto und Flugzeug bestehen aus vielen vernetzten Computersystemen.
+Die Steuersysteme im Auto und Flugzeug bestehen aus vielen vernetzten Computern.
 Sie interagieren mit zahlreichen Sensoren und Aktuatoren, um ihre Aufgaben zu erfüllen.
-Ein vollwertiges "`Fly-by-Wire"' Steuersystem für Verkehrsflugzeuge setzt sich aus ca. 40 vernetzten Computersystemen zusammen.
-Moderne Fahrzeuge beinhalten nicht selten mehr als 75 Computersysteme, um die Vielzahl an Funktionen zu realisieren.
-Die Entwicklung dieser Systeme gerät in Anbetracht dieser Komplexität an ihre Grenzen.
-Sie ist gefordert, alle Anforderungen zu erfüllen und dabei eine maximale Zuverlässigkeit bei minimalen Kosten zu erzielen.
+Ein vollwertiges "`Fly-by-Wire"' Steuersystem für Verkehrsflugzeuge setzt sich aus ca. 40 vernetzten Computern zusammen.
+Moderne Fahrzeuge beinhalten nicht selten mehr als 75 Computer, um die Vielzahl an Funktionen zu realisieren.
+Die Entwicklung derartiger Steuersysteme gerät in Anbetracht dieser Komplexität an ihre Grenzen.
+Sie ist gefordert, alle Funktionen unter Berücksichtigung verschiedener denkbarer Umgebungsbedingungen und "=zustände zu realisieren und dabei eine maximale Zuverlässigkeit bei minimalen Kosten zu erzielen.
 
 Diese Komplexität ist ohne den Einsatz von Computer in der Entwicklung nicht mehr zu bewältigen.
-Obwohl sich das Einsatzspektrum der Computer in diesem Bereich in den letzten Jahren deutlich erweitert hat, ist die grundlegende Arbeitsteilung zwischen dem menschlichen Entwickler und seinem elektronischen Assistenten noch immer unverändert.
-Während der Computer die wiederkehrenden \emph{Routine"= und Analyseaufgaben} übernimmt, sind die \emph{kreativ"=konstruktiven Tätigkeiten} noch immer dem Menschen überlassen.
+Obwohl sich das Einsatzspektrum der Computer in der Systementwicklung in den letzten Jahren deutlich erweitert hat, ist die grundlegende Arbeitsteilung zwischen dem menschlichen Entwickler und seinem elektronischen Assistenten noch immer unverändert.
+Während der Computer die wiederkehrenden \emph{Routine"=} und \emph{Analyseaufgaben} übernimmt, bleiben die \emph{kreativ"=konstruktiven Tätigkeiten} dem Menschen überlassen.
 Der Mensch erschafft mit seiner Arbeit etwas Neues und Originelles -- zum Beispiel die Architektur einer neuen Flugsteuerung oder einen Algorithmus für eine neue Assistenzfunktion.
-Die Transformation dieser neuen "`Artefakte"' in Maschinencode und deren Analyse auf Programmierfehler wird durch den Computer durchgeführt. 
-Aufgrund dieser Arbeitsteilung ist die Komplexität der zu entwickelnden Systeme durch die menschliche Verarbeitungskapazität begrenzt, denn jedes Entwicklungsvorhaben ist zunächst auf die Durchführung von kreativ"=konstruktiven Tätigkeiten angewiesen.
-
-Grundsätzlich muss der Entwickler dazu die Anforderungen an das System verinnerlichen und mit den Eigenschaften und Fähigkeiten der zur Verfügung stehenden "`Lösungsbausteine"' in Übereinkunft bringen. 
+Erst die Transformation dieser neuen "`Artefakte"' in Maschinencode und deren Analyse auf Programmierfehler wird durch den Computer durchgeführt. 
+Aufgrund dieser Arbeitsteilung ist die Komplexität der zu entwickelnden Systeme durch die menschliche Verarbeitungskapazität begrenzt, denn der Entwickler kann nur eine begrenzte Zahl an Anforderungen an ein neu zu entwickelndes System verarbeiten und diese auch nur mit einer begrenzten Zahl zur Verfügung stehender "`Lösungsbausteine"' in Übereinkunft bringen. 
 Eine vollständige und fehlerlose Berücksichtigung \emph{aller} Anforderungen bei der Systementwicklung übersteigt bereits heute in vielen Fällen die Verarbeitungskapazität der Entwickler.
-Spätestens mit der Nutzung von Mehrkernprozessoren, die eine parallele Ausführung verschiedene Softwaremodule zur gleichen Zeit ermöglichen, ist die Grenze der sicher beherrschbaren Komplexität überschritten.
-Eine a~priori Abschätzung \emph{aller} Auswirkungen dieser Parallelität überschreitet das Vermögen menschlicher Entwickler.
 
-Die gestiegene Komplexität der Systeme führt nicht nur die kreativ"=konstruktiven Tätigkeiten der Entwicklung an ihre Grenzen.
-Auch die automatisierten Verfahren zum Testen der entwickelten Systeme sind diesem Anstieg nicht mehr vollumfänglich gewachsen.
-Der Nachweis über die \emph{vollständige} Korrektheit eines derartigen Systeme unter \emph{allen} Randbedingungen lässt sich nicht mehr allein durch die Beobachtung von dessen Verhalten erbringen.
-Aufgrund der Vielzahl der dann zu prüfenden System"= und Umgebungszustände ist ein derartiges Vorgehen nicht länger ökonomisch sinnvoll.
+Spätestens mit der Nutzung von \emph{Mehrkernprozessoren}, die nicht nur eine stärkere Konzentration von Softwaremodulen auf einem Computer, sondern auch deren parallele Ausführung zur gleichen Zeit ermöglichen, ist die Grenze der sicher beherrschbaren Komplexität überschritten.
+Eine präzise und vollständige a~priori Abschätzung \emph{aller} Auswirkungen dieser Verdichtung und Parallelisierung überschreitet das Vermögen menschlicher Entwickler.
 
-Die Grenze der Mächtigkeit der etablierten Entwicklungsmethoden und "=werkzeuge ist erreicht.
-Ihre Weiterentwicklung ist die Voraussetzung, um die hohe Zuverlässigkeit der Systeme auch  zukünftig zu gewährleisten.
-Ein vielversprechender Ansatz zur Lösung dieser Problematik liegt in der \emph{Automatisierung der kreativ"=konstruktiven Tätigkeiten}. 
+Derart hochkomplexe Systeme führen nicht nur die menschliche Entwicklungsarbeit an ihre Grenzen.
+Auch die automatisierten Verfahren zum Testen der Neuentwicklungen sind dieser hohen Komplexität nicht mehr vollumfänglich gewachsen.
+Wurde bisher die Korrektheit eines Systems durch die extrinsische Beobachtung seines funktionalen Verhaltens getestet, genügt dies heute nicht mehr.
+Die Zeit, die dann für die Prüfung aller System"= und Umgebungszustände benötigt werden würde, übersteigt die vorgesehene Entwicklungszeit häufig um ein Vielfaches.
+Daher lässt sich der Nachweis über die \emph{vollständige} Korrektheit eines Steuersystems unter \emph{allen} Randbedingungen nicht mehr allein durch die Beobachtung von dessen Verhalten erbringen.
+
+Dies bedeutet, mit Blick auf die gewachsenen Ansprüche an die Funktionalität von Steuersystemen ist die Grenze der Mächtigkeit der etablierten Entwicklungsmethoden und "=werkzeuge erreicht.
+Ihre Weiterentwicklung ist die Voraussetzung, um auch zukünftig neue Steuersysteme mit einem erweiterten Funktionsumfang bei gleichzeitiger Aufrechterhaltung einer hohen Zuverlässigkeit zu konstruieren.
+
+Ein vielversprechender Ansatz zur Lösung dieser Problematik liegt in der \emph{Automatisierung} der kreativ"=konstruktiven Tätigkeiten. 
 Dies bricht mit der traditionellen Arbeitsteilung in der Entwicklung.
-Die Rolle des menschlichen Entwicklers wird auf die korrekte und vollständige Spezifikation von Anforderungen reduziert, zu denen der Computer ein geeignetes "`Artefakt"' automatisiert und fehlerfrei konstruiert.
+Bei diesem Ansatz besteht die Aufgabe des menschlichen Entwicklers darin, die Anforderungen an das zu entwickelnde Steuersystem vollständig, präzise und fehlerfrei zu beschreiben.
+Im Anschluss konstruiert der Computer unter Zuhilfenahme der verfügbaren Lösungsbausteine automatisiert ein geeignetes "`Artefakt"', das alle gestellten Anforderungen erfüllt.
 
-Falls sich dieser Ansatz realisieren lässt, sind seine Vorteile vielfältig.
-Zunächst sind Computer wesentlich besser in der Lage, die gestellten Anforderungen und die technischen Möglichkeiten in Übereinkunft zu bringen.
-Die Grenze der beherrschbaren Komplexität der kreativ"=konstruktiven Tätigkeiten lässt sich damit nach oben verschieben.
-Zudem ergibt sich ein weiterer Vorteil aus der Automatisierung des Konstruktionsprozesses.
-Sie eröffnet die Möglichkeit, die Korrektheit eines Systems auf der Grundlage seines Konstruktionsprozesses zu begründen anstatt
- dafür eine unvollständige Beobachtung des Verhaltens von außen zu verwenden.
-Daher ist die Automatisierung der kreativ"=konstruktiven Tätigkeiten eine zentrale Herausforderung für die ingenieurwissenschaftliche Forschung, um die Weiterentwicklung dieser Systeme zu ermöglichen und auch zukünftig deren Zuverlässigkeit zu gewährleisten.  
+Vorteile dieses Ansatzes liegen zum einen darin, dass Computer in der Lage sind, die gestellten Anforderungen \emph{vollständiger} und \emph{präziser} mit den technischen Möglichkeiten in Übereinkunft zu bringen.
+Die Grenze der beherrschbaren Komplexität lässt sich damit nach oben verschieben.
+Zum anderen eröffnet die Automatisierung der Konstruktion die Möglichkeit, die Korrektheit eines Systems auf der Grundlage seines Konstruktionsprozesses zu begründen anstatt dafür eine unvollständige Beobachtung des Systemverhaltens zu verwenden.
+Daher ist die Automatisierung der kreativ"=konstruktiven Tätigkeiten eine zentrale Herausforderung für die ingenieurwissenschaftliche Forschung im Bereich der Systementwicklung, um die Weiterentwicklung von Steuersystemen zu ermöglichen und auch zukünftig deren Zuverlässigkeit zu gewährleisten.  
 
 
 \textbf{NOCH NICHT ÜBERARBEITET}
