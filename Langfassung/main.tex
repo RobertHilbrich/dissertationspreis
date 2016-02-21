@@ -56,8 +56,13 @@ Erst die Transformation dieser neuen "`Artefakte"' in Maschinencode und deren An
 Aufgrund dieser Arbeitsteilung ist die Komplexität der zu entwickelnden Systeme durch die menschliche Verarbeitungskapazität begrenzt, denn der Entwickler kann nur eine begrenzte Zahl an Anforderungen an ein neu zu entwickelndes System verarbeiten und diese auch nur mit einer begrenzten Zahl zur Verfügung stehender "`Lösungsbausteine"' in Übereinkunft bringen. 
 Eine vollständige und fehlerlose Berücksichtigung \emph{aller} Anforderungen bei der Systementwicklung übersteigt bereits heute in vielen Fällen die Verarbeitungskapazität der Entwickler.
 
-Spätestens mit der Nutzung von \emph{Mehrkernprozessoren}, die nicht nur eine stärkere Konzentration von Softwaremodulen auf einem Computer, sondern auch deren parallele Ausführung zur gleichen Zeit ermöglichen, ist die Grenze der sicher beherrschbaren Komplexität überschritten.
-Eine präzise und vollständige a~priori Abschätzung \emph{aller} Auswirkungen dieser Verdichtung und Parallelisierung überschreitet das Vermögen menschlicher Entwickler.
+Spätestens mit der Nutzung von \emph{Mehrkernprozessoren} ist die Grenze der sicher beherrschbaren Komplexität überschritten.
+Während klassische \emph{Einkernprozessoren} die Ausführung von nur \emph{einem} Softwaremodul zu jedem Zeitpunkt ermöglichten und damit auch nur eine kleine Anzahl an Softwaremodulen pro Prozessor integriert werden konnte, bieten \emph{Mehrkernprozessoren} aufgrund ihrer deutlich gestiegenen Rechenleistung mehr Flexibilität.   
+Mit Hilfe ihrer unabhängig arbeitenden Rechenkerne ermöglichen sie erstmals eine \emph{parallele Ausführung} verschiedener Softwaremodule zur gleichen Zeit, so dass wesentlich mehr Softwaremodule auf einem Prozessor integeriert werden können.  
+Mehrkernprozessoren mit über 1000 parallel arbeitenden Rechenkernen sind bereits frei verfügbar.
+Sie versprechen eine sehr hohe Rechenleistung bei einem äußerst geringen Energieverbrauch und stellen damit vielversprechende "`Lösungsbausteine"' für die Steuersysteme der Zukunft dar. 
+Allerdings überschreitet eine präzise und vollständige a~priori Abschätzung \emph{aller} Auswirkungen dieser Verdichtung von Softwaremodulen auf einem Mehrkernprozessor und der daraus resultierenden Ressourcenkonkurrenz das Vermögen menschlicher Entwickler.
+Sie können die Zuverlässigkeit eines Systementwurfs auf Basis von Mehrkernprozessoren nur noch sehr eingeschränkt beurteilen.   
 
 Derart hochkomplexe Systeme führen nicht nur die menschliche Entwicklungsarbeit an ihre Grenzen.
 Auch die automatisierten Verfahren zum Testen der Neuentwicklungen sind dieser hohen Komplexität nicht mehr vollumfänglich gewachsen.
@@ -79,9 +84,11 @@ Zum anderen eröffnet die Automatisierung der Konstruktion die Möglichkeit, die K
 Daher ist die Automatisierung der kreativ"=konstruktiven Tätigkeiten eine zentrale Herausforderung für die ingenieurwissenschaftliche Forschung im Bereich der Systementwicklung, um die Weiterentwicklung von Steuersystemen zu ermöglichen und auch zukünftig deren Zuverlässigkeit zu gewährleisten.  
 
 
-\textbf{NOCH NICHT ÜBERARBEITET}
 
-Die zugrunde liegende Dissertation befasst sich mit der automatisierten Konstruktion eines zentralen Artefakts sicherheitskritischer Systeme: der Zuweisung von Ressourcen, zum Beispiel der Rechenzeit auf einem Prozessor oder einem Teil des Arbeitsspeichers, zu den einzelnen Softwarekomponenten -- oder anders formuliert: der Platzierung der Softwarekomponenten auf den Ressourcen des Systems.
+Die zugrunde liegende Dissertation befasst sich mit der automatisierten Konstruktion eines zentralen "`Artefakts"' eines Steuersystems:
+
+
+ sicherheitskritischer Systeme: der Zuweisung von Ressourcen, zum Beispiel der Rechenzeit auf einem Prozessor oder einem Teil des Arbeitsspeichers, zu den einzelnen Softwarekomponenten -- oder anders formuliert: der Platzierung der Softwarekomponenten auf den Ressourcen des Systems.
 Diese Zuweisung ist scheinbar unspektakulär, doch dieser Eindruck trügt.
 Eine "`richtige"' und "`ausreichende"' Zuweisung von Ressourcen, ist für das Gesamtsystem \emph{essentiell}.
 Sie ist die Grundvoraussetzung dafür, dass zeitkritische Steuerungsmodule, zum Beispiel das Airbagsteuergerät im Auto, zum "`richtigen"' Zeitpunkt über "`genügend"' Ressourcen zur Abarbeitung ihrer Steuerungslogiken verfügen.
