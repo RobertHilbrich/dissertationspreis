@@ -98,19 +98,83 @@ Vor dem Hintergrund dieser Herausforderung wird in der zugrunde liegenden Disser
 
 Mittlerweile wird dieses Verfahren in leicht angepasster Form bei einem Hersteller ziviler Flugzeuge für die Optimierung der Systemarchitektur eines Flugzeugtyps eingesetzt.
 Durch die Verwendung dieses Verfahrens konnte die benötigte Zeitdauer für die Konstruktion einer vollständigen und fehlerfreien Zuweisung von ca. 12-15~Monaten auf einen Zeitraum von etwa 5~Minuten reduziert werden.
-Die Kürze der Konstruktionsdauer ermöglichte erstmals die Synthese einer Vielzahl unterschiedlicher Zuweisungen, so dass erstmalig auch Entwurfsalternativen zur Optimierung verglichen und letztendlich Geräte eingespart werden konnten.
+Die Kürze der Konstruktionsdauer ermöglichte erstmals die Synthese einer Vielzahl unterschiedlicher Zuweisungen, so dass erstmalig überhaupt Entwurfsalternativen zur Optimierung verglichen und letztendlich Geräte eingespart werden konnten.
+
+Insbesondere im Bereich der Luftfahrt ist die Reduzierung des Eigengewichts eines Systems von herausragender Bedeutung.
+Zur groben Abschätzung der Ersparnis wird zumeist die Annahme zugrunde gelegt, dass eine Gewichtsreduzierung des Flugzeugs um 1\% zu einer Senkung des Kerosinbedarfs um 0,75~\% führt.
+Konkret führt jedes eingesparte Kilogramm Gewicht bei einem zivilen Verkehrsflugzeug der aktuellen Generation zu einer Reduzierung der benötigten Treibstoffmenge in Höhe von etwa USD 3000 pro Jahr.
+Die entwickelten Verfahren zur Automatisierung der Entwicklung und Beherrschung der Komplexität sind daher ein wesentlicher Baustein, um die Ziele der Luftfahrtindustrie in Sachen Klimaschutz zu erreichen: ein $CO_2$-neutrales Wachstum ab dem Jahr 2020 sowie eine Halbierung der $CO_2$-Emissionen (in Relation zum Jahr 2005) bis zum Jahr 2050.
 
 In den folgenden Abschnitten ...
 
 \section{Ergebnisse der Dissertation}
 \label{sec:ergebn-der-diss}
 
-Hier kommt der Inhalt der Dissertation etwas stärker im Detail; dazu die Ergebnisse ...
+\subsection*{Aufgabenstellung}
+
+Das Ziel der zugrunde liegenden Dissertation lag in der Entwicklung eines Verfahrens, mit dem Softwarekomponenten automatisiert und ohne Einschränkung bei der Erfüllung von Zuverlässigkeitsanforderungen auf die verschiedenen Computer eines Steuersystems platziert werden können.
+Dieses Verfahren sollte nicht nur die Konstruktion \emph{einer} Platzierung erlauben, sondern auch \emph{alternative Platzierungen} produzieren, so dass eine Optimierung des Gesamtsystems trotz großer Komplexität durchgeführt werden kann.
+Mit Hilfe der Optimierung sollte eine hohe "`Funktionsdichte"' erzielt werden, so dass die Ressourcen der Computer, zum Beispiel die Prozessoren, möglichst \emph{gemeinsam} durch verschiedene Softwarekomponenten verwendet werden und damit eine hohe \emph{Ressourceneffizienz} erzielt wird.
+
+\subsection{Ergebnisse}
+
+Die Ergebnisse der Dissertation untergliedern sich in einen \emph{methodischen}, einen \emph{konzeptuellen} und einen \emph{praktischen Teil}.
+Im methodischen Teil wird ein Vorgehensmodell entwickelt, das einen neuartigen Ablauf der Entwicklungsschritte beschreibt und dabei insbesondere die neuen Möglichkeiten einer automatisierten Platzierung von Softwarekomponenten berücksichtigt.
+
+Der konzeptuelle Teil bildet das Herzstück der Arbeit.
+Er enthält die im Rahmen dieser Arbeit entwickelten Formalismen, mit denen die Anforderungen und die Freiheitsgrade einer Platzierung eindeutig und maschinenlesbar spezifiziert werden können.
+Hier werden auch die neuen Transformationen vorgestellt, mit deren Hilfe ein formal spezifiziertes Platzierungsproblem auf einen generischen, mathematischen Formalismus -- ein \emph{Constraint Satisfaction Problem} -- überführt werden kann.
+Diese Überführung ist die Voraussetzung für den Einsatz effizienter Algorithmen, mit denen Lösungen für ein derartiges \emph{Constraint Satisfaction Problem} automatisiert erstellt werden können.
+
+Im praktischen Teil wird die Umsetzung dieses Verfahrens in Form des Softwarewerkzeugs ASSIST dokumentiert.
+ASSIST ermöglicht es einem Fachexperten mit geringen IT-Kenntnissen, das zu entwickelnde Steuersystem und dessen Anforderungen textuell zu beschreiben und anschließend eine Platzierung aller Softwarekomponenten automatisiert konstruieren zu lassen.
+Eine Demonstration des Einsatzes von ASSIST am Beispiel einer Flugsteuerung für ein ziviles Verkehrsflugzeug sowie am Beispiel eines Steuersystems für ein Raumfahrzeug ist ein weiterer praktischer Bestandteil dieser Arbeit.
+
+\subsubsection{Ergebnisse im methodischen Teil}
+
+Die Platzierung von Softwarekomponenten ist ein wichtiger Dreh"= und Angelpunkt in der Entwicklung eines Steuersystems, denn sie repräsentiert die Ergebnisse einer Abstimmung zwischen den Möglichkeiten der Hardware"=Entwicklung und den Anforderungen der Software"=Entwicklung.
+Während viele Aspekte der Entwicklung von Steuersystemen in diversen Normen und Industriestandards detailliert beschrieben sind, ist dies für die Konstruktion einer Platzierung von Softwarekomponenten nicht gegeben.
+Die notwendigen Schritte zu ihrer Erstellung werden -- trotz ihrer zentralen Bedeutung für die korrekte Arbeitsweise des Steuersystems -- nicht dokumentiert.
+Sie wird stattdessen als "`korrekt"' und "`vollständig vorliegend"' angenommen.
+
+Im Rahmen der Dissertation wurden zunächst die Entwicklungsprozesse in der Praxis der Luft"= und Raumfahrt analysiert, so dass ein Katalog mit Anforderungen an ein Vorgehen zur Konstruktion einer Platzierung erstellt werden konnte.
+Auf der Basis dieser Anforderungen wurde im Anschluss ein konkretes Vorgehensmodell entwickelt.
+Es beschreibt die Abfolge der notwendigen Entwicklungsaktivitäten und Informationsflüsse zur Erstellung einer Platzierung.
+
+Eine zentrale Herausforderung bei der Entwicklung des Vorgehensmodells bestand darin, die unterschiedlichen \emph{Detaillierungsgrade} der Anforderungen zu verarbeiten, denn die Konstruktion einer Platzierung erfolgt nicht nur einmalig.
+Sie kann stattdessen als iterativer Prozess verstanden werden, bei dem die Ergebnisse schrittweise verfeinert und konkretisiert werden.
+Am Anfang der Entwicklung eines Steuersystems liegen beispielsweise meist nur sehr grobe Informationen über die Struktur und die Bedarfe der Softwarekomponenten vor. 
+Zugleich sind zu diesem Zeitpunkt meist auch erst sehr wenige Informationen über die Fähigkeiten der Prozessoren verfügbar.
+Dennoch müssen bereits zu diesem Zeitpunkt grundlegende Entscheidungen zum Aufbau eines Steuersystems getroffen werden.
+Zum Beispiel muss bereits zu diesem Zeitpunkt abgeschätzt werden, wieviele Computer notwendig sind, damit das Steuersystem die geforderte Zuverlässigkeit bietet.
+Die Konstruktion einer Platzierung von Softwarekomponenten ist zu diesem Zeitpunkt ein wertvolles Hilfsmittel, um den Bedarf nach redundanten Computern und Prozessoren abzuschätzen.
+
+Am Ende der Entwicklung sind die Anforderungen der Softwarekomponenten und Fähigkeiten der Prozessoren detailliert bekannt.
+Die Aufgabe der Platzierung liegt dann nicht nur in der groben Zuordnung der Softwarekomponenten zu den Prozessoren in den verschiedenen Computern eines Steuersystems. 
+Sie muss darüber hinaus auch für jeden Prozessor, der von mehreren Softwarekomponenten benutzt wird, einen \emph{Ablaufplan} erstellen.
+Dieser Ablaufplan bestimmt, welche Softwarekomponente zu welchem Zeitpunkt wieviel Rechenzeit auf dem Prozessor erhält.
+Dies ist insbesondere für zeitkritische Softwarekomponenten, wie zum Beispiel die Airbagsteuerung, essentiell, denn sie können ihre Funktion nur dann erfüllen, wenn sie zum \emph{richtigen} Zeitpunkt \emph{ausreichend} Rechenzeit für ihre Ausführung erhalten.
+Die Erstellung eines solchen Ablaufplans für \emph{alle} Softwarekomponenten auf \emph{allen} Prozessoren eines Steuersystems unter Beachtung \emph{aller} Anforderungen zeitkritischer Komponenten, ist sehr komplex, aufwändig und fehlerträchtig.
+Ein geeignetes Vorgehensmodell muss daher sowohl in frühen Phasen mit groben Informationen als auch in späteren Entwicklungsphasen mit sehr detaillierten Informationen Unterstützung bieten.
+
+Aufgrund dieser Anforderungen wurde die Konstruktion einer Platzierung im entwickelten Vorgehensmodell auf zwei Phasen aufgeteilt: eine \emph{räumliche} und eine \emph{zeitliche Platzierung}.
+Die räumliche Platzierung wird in frühen Entwicklungsphasen durchgeführt und platziert die Softwarekomponenten primär unter Berücksichtigung ihrer Zuverlässigkeitsanforderungen auf die einzelnen Computersysteme und Prozessoren.
+Es wird zu diesem Zeitpunkt beispielsweise sichergestellt, dass redundante Softwarekomponenten auch auf unterschiedlichen Prozessoren ausgeführt werden, um die Auswirkungen beim Ausfall eines Prozessors zu minimieren.
+In frühen Entwicklungsphasen sind in der Regel alle notwendigen Informationen verfügbar, um diese Entscheidungen sicher treffen zu können und damit den Aufbau der grundlegenden Architektur eines Steuersystems zu begleiten.
+
+
+
+
+
+
+\subsubsection{}
 
 \section{Gesellschaftliche Bedeutung}
 \label{sec:gesellsch-bede}
 
 \begin{itemize}
+\item Arbeit schlägt die Brücke zwischen der Theorie und Praxis
+\item Werkzeug erlaubt es auch einem Fachexperten, die Forschritte aus dem Bereich der Informatik nutzen zu können
 \item Zunächst kann damit die Entwicklung von Systemen beschleunigt werden
 \item Systeme können optimiert werden, so dass weniger Ressourcen benötigt werden 
 \item Weniger Fehler im System 
