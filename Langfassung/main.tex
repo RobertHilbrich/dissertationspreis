@@ -56,8 +56,13 @@ Erst die Transformation dieser neuen "`Artefakte"' in Maschinencode und deren An
 Aufgrund dieser Arbeitsteilung ist die Komplexität der zu entwickelnden Systeme durch die menschliche Verarbeitungskapazität begrenzt, denn der Entwickler kann nur eine begrenzte Zahl an Anforderungen an ein neu zu entwickelndes System verarbeiten und diese auch nur mit einer begrenzten Zahl zur Verfügung stehender "`Lösungsbausteine"' in Übereinkunft bringen. 
 Eine vollständige und fehlerlose Berücksichtigung \emph{aller} Anforderungen bei der Systementwicklung übersteigt bereits heute in vielen Fällen die Verarbeitungskapazität der Entwickler.
 
-Spätestens mit der Nutzung von \emph{Mehrkernprozessoren}, die nicht nur eine stärkere Konzentration von Softwaremodulen auf einem Computer, sondern auch deren parallele Ausführung zur gleichen Zeit ermöglichen, ist die Grenze der sicher beherrschbaren Komplexität überschritten.
-Eine präzise und vollständige a~priori Abschätzung \emph{aller} Auswirkungen dieser Verdichtung und Parallelisierung überschreitet das Vermögen menschlicher Entwickler.
+Spätestens mit der Nutzung der neuen \emph{Mehrkernprozessoren} ist die Grenze der sicher beherrschbaren Komplexität überschritten.
+Während klassische \emph{Einkernprozessoren} die Ausführung von nur \emph{einem} Softwaremodul zu jedem Zeitpunkt ermöglichten und daher auch nur eine kleine Anzahl an Softwaremodulen pro Prozessor integriert werden konnte, bieten \emph{Mehrkernprozessoren} aufgrund ihrer deutlich gestiegenen Rechenleistung mehr Flexibilität.   
+Mit Hilfe ihrer unabhängig arbeitenden Rechenkerne ermöglichen sie erstmals eine \emph{parallele Ausführung} verschiedener Softwaremodule zur gleichen Zeit, so dass -- zumindest theoretisch -- wesentlich mehr Softwaremodule auf einem Prozessor integeriert werden können.  
+Mittlerweile sind Mehrkernprozessoren mit über 1000 parallel arbeitenden Rechenkernen frei verfügbar.
+Im Vergleich zu den klassischen \emph{Einkernprozessorenn} versprechen sie eine deutliche Steigerung der Rechenleistung bei einem äußerst geringen Energieverbrauch und stellen damit vielversprechende "`Lösungsbausteine"' für die Steuersysteme der Zukunft dar. 
+Allerdings überschreitet eine präzise und vollständige a~priori Abschätzung \emph{aller} Auswirkungen dieser starken Konzentration von Softwaremodulen auf einem Mehrkernprozessor und der daraus resultierenden Ressourcenkonkurrenz das Vermögen menschlicher Entwickler.
+Sie können die Zuverlässigkeit eines Systementwurfs auf Basis von Mehrkernprozessoren nur noch sehr eingeschränkt beurteilen.   
 
 Derart hochkomplexe Systeme führen nicht nur die menschliche Entwicklungsarbeit an ihre Grenzen.
 Auch die automatisierten Verfahren zum Testen der Neuentwicklungen sind dieser hohen Komplexität nicht mehr vollumfänglich gewachsen.
@@ -65,8 +70,8 @@ Wurde bisher die Korrektheit eines Systems durch die extrinsische Beobachtung se
 Die Zeit, die dann für die Prüfung aller System"= und Umgebungszustände benötigt werden würde, übersteigt die vorgesehene Entwicklungszeit häufig um ein Vielfaches.
 Daher lässt sich der Nachweis über die \emph{vollständige} Korrektheit eines Steuersystems unter \emph{allen} Randbedingungen nicht mehr allein durch die Beobachtung von dessen Verhalten erbringen.
 
-Dies bedeutet, mit Blick auf die gewachsenen Ansprüche an die Funktionalität von Steuersystemen ist die Grenze der Mächtigkeit der etablierten Entwicklungsmethoden und "=werkzeuge erreicht.
-Ihre Weiterentwicklung ist die Voraussetzung, um auch zukünftig neue Steuersysteme mit einem erweiterten Funktionsumfang bei gleichzeitiger Aufrechterhaltung einer hohen Zuverlässigkeit zu konstruieren.
+Dies bedeutet, mit Blick auf die gewachsenen Ansprüche an die Funktionalität und die Effizienz von Steuersystemen ist die Grenze der Mächtigkeit der etablierten Entwicklungsmethoden und "=werkzeuge erreicht.
+Ihre Weiterentwicklung ist die Voraussetzung, um auch zukünftig effiziente Steuersysteme mit einem erweiterten Funktionsumfang bei gleichzeitiger Aufrechterhaltung einer hohen Zuverlässigkeit zu konstruieren.
 
 Ein vielversprechender Ansatz zur Lösung dieser Problematik liegt in der \emph{Automatisierung} der kreativ"=konstruktiven Tätigkeiten. 
 Dies bricht mit der traditionellen Arbeitsteilung in der Entwicklung.
@@ -78,34 +83,45 @@ Die Grenze der beherrschbaren Komplexität lässt sich damit nach oben verschieben
 Zum anderen eröffnet die Automatisierung der Konstruktion die Möglichkeit, die Korrektheit eines Systems auf der Grundlage seines Konstruktionsprozesses zu begründen anstatt dafür eine unvollständige Beobachtung des Systemverhaltens zu verwenden.
 Daher ist die Automatisierung der kreativ"=konstruktiven Tätigkeiten eine zentrale Herausforderung für die ingenieurwissenschaftliche Forschung im Bereich der Systementwicklung, um die Weiterentwicklung von Steuersystemen zu ermöglichen und auch zukünftig deren Zuverlässigkeit zu gewährleisten.  
 
+Die zugrunde liegende Dissertation befasst sich mit der automatisierten Konstruktion eines zentralen "`Artefakts"' eines Steuersystems: der Platzierung der verschiedenen Softwaremodule auf den Computern eines Steuersystems.
+Diese Zuweisung von "`Ressourcen"', wie beispielsweise Rechenzeit auf einem Prozessorkern oder einem Bereich im Arbeitsspeicher, zu einem Softwaremodul ist scheinbar unspektakulär, doch dieser Eindruck trügt.
+Ein Steuersystem kann seine Funktion meist nur dann erbringen, wenn seine Softwaremodule die "`richtigen"' Ressourcen in "`ausreichender"' Menge zum "`richtigen"' Zeitpunkt bekommen.
+Wenn das Softwaremodul zur Auslösung der Airbags im Auto beispielsweise nicht rechtzeitig Rechenzeit auf dem Prozessor bekommt, dann besteht die Gefahr einer verzögerten Auslösung.
+Die Schutzfunktion des Airbags ist damit gefährdet. 
 
-\textbf{NOCH NICHT ÜBERARBEITET}
+Neben der korrekten Berücksichtigung von solchen zeitkritischen Softwaremodulen, muss die Konstruktion einer Platzierung von Softwaremodulen auch die Auswirkungen auf die Zuverlässigkeit in Betracht ziehen.
+So wird bei Steuersystemen eine hohe Zuverlässigkeit meist durch den Einsatz redundant arbeitender Softwaremodule realisiert. 
+Sobald ein Modul bedingt durch einen technischen Fehler ausfällt, kann ein anderes Modul dessen Aufgaben übernehmen.
+Dies funktioniert selbstverständlich nur dann, wenn alle redundanten Softwaremodule auf \emph{unterschiedlichen} Prozessoren platziert wurden.
+Eine "`richtige"' und "`ausreichende"' Zuweisung von Ressourcen ist daher für ein Steuersystem -- und auch für viele andere Systeme -- von \emph{essentieller} Bedeutung.
+Die Entwicklung einer Zuweisung steht daher in dem Zielkonflikt, einerseits eine hohe Zuverlässigkeit durch die Verwendung möglichst vieler Prozessoren gewährleisten zu müssen und andererseits eine hohe Integration von Softwaremodulen auf möglichst wenigen Prozessoren zu realisieren.
+  
+Die Konstruktion einer Ressourcenzuweisung für alle Softwaremodule eines Steuersystems ist sehr aufwändig und fehlerträchtig.
+Dazu müssen bereits während der Entwicklung \emph{alle} theoretisch möglichen Ausfälle technischer Komponenten adäquat berücksichtigt und \emph{alle} Ressourcenzugriffe der zeitkritischen Softwaremodule koordiniert werden.
+Dies erfordert ein präzises und vollständiges Verständnis sowohl der Ressourcenbedarfe \emph{aller} Softwaremodule als auch der Kapazitäten und Eigenschaften \emph{aller} verfügbaren Ressourcen -- zum Beispiel Prozessoren, Speicherbusse, Gerätecontroller, \dots. 
+Während eine solche Ressourcenzuweisung in der Vergangenheit noch manuell konstruiert werden konnte, ist dies bei Mehrkernprozessoren nicht länger sinnvoll möglich.
+Das resultierende Komplexitätsniveau macht eine Weiterentwicklung der etablierten Verfahren zwingend notwendig. 
+Vor dem Hintergrund dieser Herausforderung wird in der zugrunde liegenden Dissertation ein \emph{automatisiertes Verfahren} zur Konstruktion einer Ressourcenzuweisung entwickelt.
+Dieses Verfahren wird als Software"=Werkzeug umgesetzt und anhand von zwei Fallbeispielen aus der Luft- und Raumfahrt erprobt.
 
-Die zugrunde liegende Dissertation befasst sich mit der automatisierten Konstruktion eines zentralen Artefakts sicherheitskritischer Systeme: der Zuweisung von Ressourcen, zum Beispiel der Rechenzeit auf einem Prozessor oder einem Teil des Arbeitsspeichers, zu den einzelnen Softwarekomponenten -- oder anders formuliert: der Platzierung der Softwarekomponenten auf den Ressourcen des Systems.
-Diese Zuweisung ist scheinbar unspektakulär, doch dieser Eindruck trügt.
-Eine "`richtige"' und "`ausreichende"' Zuweisung von Ressourcen, ist für das Gesamtsystem \emph{essentiell}.
-Sie ist die Grundvoraussetzung dafür, dass zeitkritische Steuerungsmodule, zum Beispiel das Airbagsteuergerät im Auto, zum "`richtigen"' Zeitpunkt über "`genügend"' Ressourcen zur Abarbeitung ihrer Steuerungslogiken verfügen.
+Die gesellschaftliche Bedeutung der Ergebnisse der zugrunde liegenden Arbeit ist zweischichtig.
+Zum einen belegen die Ergebnisse, dass sich auch komplexe kreativ"=konstruktive Entwicklungsaufgaben automatisieren lassen.
+In kürzerer Zeit können effizientere und optimierte Steuersysteme entwickelt werden, ohne dabei unbeabsichtigte Beeinträchtigungen in der Zuverlässigkeit befürchten zu müssen.
+Das Niveau der beherrschbaren Komplexität wird durch das entwickelte Verfahren signifikant angehoben.
 
-Mit der Einführung von modernen "`Mehrkern-"' Prozessoren, die eine parallele Ausführung von Softwarekomponenten erlauben, wurde die Möglichkeit zu einer starken Funktionsverdichtung in der Architektur von sicherheitskritischen Systemen geschaffen.
-Ein Mehrkern-Prozessor kann -- im Gegensatz zu einem klassischen Ein-Kern-Prozessor -- verschiedene Softwarekomponenten zur gleichen Zeit ausführen, so dass Geräte eingespart und damit die Effizienz des Systems gesteigert werden können.
-Die Ressourcenzuweisung ist damit nicht nur eine Grundvoraussetzung für die korrekte Funktionsweise des Systems, sondern zugleich auch der zentrale Ansatzpunkt für Optimierungen zur Steigerung der Ressourceneffizienz.
+Mittlerweile wird dieses Verfahren in leicht angepasster Form bei einem Hersteller ziviler Flugzeuge zur Optimierung der Systemarchitektur eines Flugzeugtyps produktiv eingesetzt.
+Durch den Einsatz des Software"=Werkzeugs konnte die benötigte Zeitdauer für die Konstruktion \emph{einer} vollständigen und fehlerfreien Zuweisung von ehemals ca. 12-15~Monaten auf den Zeitraum von etwa 5~Minuten reduziert werden.
+In der Folge konnten erstmals viele unterschiedliche Zuweisungen konstruiert und miteiander verglichen werden, so dass letztendlich auch Geräte eingespart werden konnten.
+Dies resultiert in einem geringeren Gesamtgewicht des Flugzeugs und wird zu einer Reduzierung der $CO_2$ Emissionen beitragen.
 
-Die Synthese einer solchen Zuweisung erfordert eine vollständige Koordination aller Ressourcenzugriffe der Softwarekomponenten bereits zum Zeitpunkt der Entwicklung. 
-Ihre Erstellung ist äußerst aufwändig und fehlerträchtig, denn sie ist sowohl mit der Komplexität der Anforderungen \emph{aller} Softwarekomponenten als auch der Komplexität \emph{aller} Ressourcen der Hardwareplattform konfrontiert.
-Während die Ressourcenzuweisung bei realen Systemen in der Vergangenheit noch manuell konstruiert werden konnte, ist spätestens mit der Einführung von Mehrkern-Prozessoren ein Komplexitätsniveau erreicht, bei dem eine Fortsetzung tradierter Vorgehensweisen nicht länger zielführend ist.
+Zum anderen bildet diese Arbeit einen wichtigen Ausgangspunkt für eine längst überfällige Debatte über die Beherrschbarkeit der Komplexität zukünftiger Computersysteme.
+Was passiert mit der technischen Kompetenz einer Gesellschaft, wenn die Entwicklung der zentralen Steuersysteme unserer zukünftigen Fahrzeuge in immer kürzerer Zeit durch Computer durchgeführt wird?
+Besteht dann nicht die Gefahr, dass nicht nur die Anwender, sondern auch die Entwickler eines Steuersystems, dieses immer mehr als "`Black Box"' begreifen?
+Ist es dann noch immer zu verantworten, dass diese Systeme immer mehr Verantwortung für unsere Sicherheit übernehmen? 
 
-Vor dem Hintergrund dieser Herausforderung wird in der zugrunde liegenden Dissertation ein automatisiertes Verfahren zur Konstruktion einer solchen Ressourcenzuweisung für Mehrkernprozessoren entwickelt und anhand von zwei Fallbeispielen für komplexe Systeme aus der Luft- und Raumfahrt erprobt.
-
-Mittlerweile wird dieses Verfahren in leicht angepasster Form bei einem Hersteller ziviler Flugzeuge für die Optimierung der Systemarchitektur eines Flugzeugtyps eingesetzt.
-Durch die Verwendung dieses Verfahrens konnte die benötigte Zeitdauer für die Konstruktion einer vollständigen und fehlerfreien Zuweisung von ca. 12-15~Monaten auf einen Zeitraum von etwa 5~Minuten reduziert werden.
-Die Kürze der Konstruktionsdauer ermöglichte erstmals die Synthese einer Vielzahl unterschiedlicher Zuweisungen, so dass erstmalig überhaupt Entwurfsalternativen zur Optimierung verglichen und letztendlich Geräte eingespart werden konnten.
-
-Insbesondere im Bereich der Luftfahrt ist die Reduzierung des Eigengewichts eines Systems von herausragender Bedeutung.
-Zur groben Abschätzung der Ersparnis wird zumeist die Annahme zugrunde gelegt, dass eine Gewichtsreduzierung des Flugzeugs um 1\% zu einer Senkung des Kerosinbedarfs um 0,75~\% führt.
-Konkret führt jedes eingesparte Kilogramm Gewicht bei einem zivilen Verkehrsflugzeug der aktuellen Generation zu einer Reduzierung der benötigten Treibstoffmenge in Höhe von etwa USD 3000 pro Jahr.
-Die entwickelten Verfahren zur Automatisierung der Entwicklung und Beherrschung der Komplexität sind daher ein wesentlicher Baustein, um die Ziele der Luftfahrtindustrie in Sachen Klimaschutz zu erreichen: ein $CO_2$-neutrales Wachstum ab dem Jahr 2020 sowie eine Halbierung der $CO_2$-Emissionen (in Relation zum Jahr 2005) bis zum Jahr 2050.
-
-In den folgenden Abschnitten ...
+Im Anschluss werden zunächst ... 
+Anschließend ...
+Zum Abschluss wird eine kurze Zusammenfassung der Darstellungen gegeben. 
 
 \section{Ergebnisse der Dissertation}
 \label{sec:ergebn-der-diss}
@@ -187,7 +203,7 @@ Aber, diese Arbeit ist ein guter Gegenstand, um Fragen nach der Beherrschbarkeit
 \item Was sind die Nachteile die sich daraus ergeben?
 \item Ist es nicht sinnvoll, wenn sich Menschen so lange mit den Anforderungen beschäftigen?
 \item Sollten wir Dinge konstruieren und nutzen, deren Aufbau das Verständnis des Menschen übersteigt?
-\item ...
+\item Meta-Programmer - eine kleine Elite erstellt die Algorithmen, deren Komplexität sich dem Verständnis einem Großteil der Bevölkerung entzieht.
 \end{itemize}
 
 \section{Zusammenfassung}
