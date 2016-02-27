@@ -119,14 +119,14 @@ Was passiert mit der technischen Kompetenz einer Gesellschaft, wenn die Entwickl
 Besteht dann nicht die Gefahr, dass nicht nur die Anwender, sondern auch die Entwickler eines Steuersystems, dieses immer mehr als "`Black Box"' begreifen?
 Ist es dann noch immer zu verantworten, dass diese Systeme immer mehr Verantwortung für unsere Sicherheit übernehmen? 
 
-Im Anschluss werden zunächst ... 
+\textbf{Im Anschluss werden zunächst ... 
 Anschließend ...
 Zum Abschluss wird eine kurze Zusammenfassung der Darstellungen gegeben. 
-
+}
 \section{Ergebnisse der Dissertation}
 \label{sec:ergebn-der-diss}
 
-\subsection*{Aufgabenstellung}
+\subsection{Aufgabenstellung}
 
 Das Ziel der zugrunde liegenden Dissertation lag in der Entwicklung eines Verfahrens, mit dem Softwarekomponenten automatisiert und ohne Einschränkung bei der Erfüllung von Zuverlässigkeitsanforderungen auf die verschiedenen Computer eines Steuersystems platziert werden können.
 Dieses Verfahren sollte nicht nur die Konstruktion \emph{einer} Platzierung erlauben, sondern auch \emph{alternative Platzierungen} produzieren, so dass eine Optimierung des Gesamtsystems trotz großer Komplexität durchgeführt werden kann.
@@ -146,7 +146,7 @@ Im praktischen Teil wird die Umsetzung dieses Verfahrens in Form des Softwarewer
 ASSIST ermöglicht es einem Fachexperten mit geringen IT-Kenntnissen, das zu entwickelnde Steuersystem und dessen Anforderungen textuell zu beschreiben und anschließend eine Platzierung aller Softwarekomponenten automatisiert konstruieren zu lassen.
 Eine Demonstration des Einsatzes von ASSIST am Beispiel einer Flugsteuerung für ein ziviles Verkehrsflugzeug sowie am Beispiel eines Steuersystems für ein Raumfahrzeug ist ein weiterer praktischer Bestandteil dieser Arbeit.
 
-\subsubsection{Ergebnisse im methodischen Teil}
+\subsubsection{Methodischer Teil: Ein neues Vorgehensmodell}
 
 Die Platzierung von Softwarekomponenten ist ein wichtiger Dreh"= und Angelpunkt in der Entwicklung eines Steuersystems, denn sie repräsentiert die Ergebnisse einer Abstimmung zwischen den Möglichkeiten der Hardware"=Entwicklung und den Anforderungen der Software"=Entwicklung.
 Während viele Aspekte der Entwicklung von Steuersystemen in diversen Normen und Industriestandards detailliert beschrieben sind, ist dies für die Konstruktion einer Platzierung von Softwarekomponenten nicht gegeben.
@@ -166,8 +166,8 @@ Zum Beispiel muss bereits zu diesem Zeitpunkt abgeschätzt werden, wieviele Compu
 Die Konstruktion einer Platzierung von Softwarekomponenten ist zu diesem Zeitpunkt ein wertvolles Hilfsmittel, um den Bedarf nach redundanten Computern und Prozessoren abzuschätzen.
 
 Am Ende der Entwicklung sind die Anforderungen der Softwarekomponenten und Fähigkeiten der Prozessoren detailliert bekannt.
-Die Aufgabe der Platzierung liegt dann nicht nur in der groben Zuordnung der Softwarekomponenten zu den Prozessoren in den verschiedenen Computern eines Steuersystems. 
-Sie muss darüber hinaus auch für jeden Prozessor, der von mehreren Softwarekomponenten benutzt wird, einen \emph{Ablaufplan} erstellen.
+Die Aufgabe der Platzierung liegt dann nicht mehr in einer groben Zuordnung der Softwarekomponenten zu den Prozessoren in den verschiedenen Computern eines Steuersystems. 
+Sie muss nun für jeden Prozessor, der von mehreren Softwarekomponenten benutzt wird, einen \emph{Ablaufplan} erstellen.
 Dieser Ablaufplan bestimmt, welche Softwarekomponente zu welchem Zeitpunkt wieviel Rechenzeit auf dem Prozessor erhält.
 Dies ist insbesondere für zeitkritische Softwarekomponenten, wie zum Beispiel die Airbagsteuerung, essentiell, denn sie können ihre Funktion nur dann erfüllen, wenn sie zum \emph{richtigen} Zeitpunkt \emph{ausreichend} Rechenzeit für ihre Ausführung erhalten.
 Die Erstellung eines solchen Ablaufplans für \emph{alle} Softwarekomponenten auf \emph{allen} Prozessoren eines Steuersystems unter Beachtung \emph{aller} Anforderungen zeitkritischer Komponenten, ist sehr komplex, aufwändig und fehlerträchtig.
@@ -178,15 +178,41 @@ Die räumliche Platzierung wird in frühen Entwicklungsphasen durchgeführt und pla
 Es wird zu diesem Zeitpunkt beispielsweise sichergestellt, dass redundante Softwarekomponenten auch auf unterschiedlichen Prozessoren ausgeführt werden, um die Auswirkungen beim Ausfall eines Prozessors zu minimieren.
 In frühen Entwicklungsphasen sind in der Regel alle notwendigen Informationen verfügbar, um diese Entscheidungen sicher treffen zu können und damit den Aufbau der grundlegenden Architektur eines Steuersystems zu begleiten.
 
+Die zeitliche Platzierung koordiniert dagegen den Zugriff mehrerer Softwarekomponenten auf die Rechenzeit eines Prozessors in der zeitlichen Dimension.
+Nach der Zuordnung der Softwarekomponenten zu den Prozessoren wird in dieser Phase ein Ablaufplan für deren Ausführung auf den Prozessoren erstellt.
+Dieser Ablaufplan muss die zeitlichen Anforderungen aller Softwarekomponenten berücksichtigen und mit der Verarbeitungsgeschwindigkeit des Prozessors in Relation setzen, denn auf einem langsamen Prozessor benötigt eine Softwarekomponente wesentlich mehr Rechenzeit, um "`vollständig"' ausgeführt zu werden.
 
+Darüber hinaus finden im entwickelten Vorgehensmodell auch zusätzliche Aktivitäten zur Analyse des Zeitverhaltens einer Softwarekomponenten auf einem spezifischen Prozessor sowie Aktivitäten zur Validierung der erstellten Platzierung Berücksichtigung.
+Der Schwerpunkt der Dissertation liegt jedoch auf der Entwicklung eines Verfahrens zur Automatisierung der räumlichen und zeitlichen Platzierung von Softwarekomponenten.
 
+\subsubsection{Konzeptioneller Teil: Formalisierung einer Platzierung}
 
+\begin{itemize}
+\item Anforderungen abgeleitet aus den Normen und als Korrektheitskriterium formalisiert
+\item Welche Dinge sind fest in den Normen gefordert?
+\item welche Dinge sind projektspezifisch und "`nutzerdefiniert"'?
+\item Ableitung von Korrektheitskriterien für eine räumliche und zeitliche Platzierung
+\end{itemize}
 
+\begin{itemize}
+\item Abbildung auf ein CSP
+\item Besondere Klasse von Problemen ...
+\item Eingeschränkte Modellierungsmittel, aber dafür effiziente Algorithmen verfügbar
+\item Zeigt, wie ein allgemeines räumliche Platzierungsproblem auf ein CSP abgebildet werden kann
+\item Zeigt, wie ein allgemeines zeitliches Platzierungsproblem auf ein CSP abgebildet werden kann
+\end{itemize}
 
-\subsubsection{}
+\subsubsection{Praktischer Teil: Softwarewerkzeug und Fallbeispiele}
+
 
 \section{Gesellschaftliche Bedeutung}
 \label{sec:gesellsch-bede}
+
+\begin{itemize}
+\item ASSIST ist frei verfügbar; Quellcode ist offen und für jeden nutzbar
+\item Nächster Schritt 
+\end{itemize}
+
 
 \begin{itemize}
 \item Arbeit schlägt die Brücke zwischen der Theorie und Praxis
