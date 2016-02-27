@@ -185,23 +185,40 @@ Dieser Ablaufplan muss die zeitlichen Anforderungen aller Softwarekomponenten be
 Darüber hinaus finden im entwickelten Vorgehensmodell auch zusätzliche Aktivitäten zur Analyse des Zeitverhaltens einer Softwarekomponenten auf einem spezifischen Prozessor sowie Aktivitäten zur Validierung der erstellten Platzierung Berücksichtigung.
 Der Schwerpunkt der Dissertation liegt jedoch auf der Entwicklung eines Verfahrens zur Automatisierung der räumlichen und zeitlichen Platzierung von Softwarekomponenten.
 
+\textbf{Einfügen der Grafik S. 54 aus der Dissertation}
+
 \subsubsection{Konzeptioneller Teil: Formalisierung einer Platzierung}
 
-\begin{itemize}
-\item Anforderungen abgeleitet aus den Normen und als Korrektheitskriterium formalisiert
-\item Welche Dinge sind fest in den Normen gefordert?
-\item welche Dinge sind projektspezifisch und "`nutzerdefiniert"'?
-\item Ableitung von Korrektheitskriterien für eine räumliche und zeitliche Platzierung
-\end{itemize}
+Im konzeptionellen Teil der Arbeit werden die Grundlagen für die Automatisierung geschaffen. 
+Dazu wird zunächst die Frage der Korrektheit einer Platzierung adressiert: wann kann eine Platzierung als "`fehlerfrei"' angesehen werden? 
+Welche Anforderungen muss sie dazu erfüllen?
 
-\begin{itemize}
-\item Abbildung auf ein CSP
-\item Besondere Klasse von Problemen ...
-\item Eingeschränkte Modellierungsmittel, aber dafür effiziente Algorithmen verfügbar
-\item Zeigt, wie ein allgemeines räumliche Platzierungsproblem auf ein CSP abgebildet werden kann
-\item Zeigt, wie ein allgemeines zeitliches Platzierungsproblem auf ein CSP abgebildet werden kann
-\end{itemize}
+Bei Steuersystemen in Fahrzeugen sind es vor allem zwei Aspekte, die neben der reinen Funktionalität, von großer Bedeutung für dessen Korrektheit sind: \emph{Zuverlässigkeit} und \emph{Echtzeitfähigkeit}.
+Zuverlässigkeit beschreibt die Robustheit des Systems in Gegenwart von Fehlern und Ausfällen, während Echtzeitfähigkeit die "`rechtzeitige"' Ausführung aller zeitkritischen Funktionen beinhaltet. 
+Eine Platzierung ist daher erst dann korrekt, wenn sie alle Zuverlässigkeits"= und Echtzeitanforderungen erfüllt.
+In der Dissertation wurden die relevanten Korrektheitskriterien einer Platzierung für die Aspekte Zuverlässigkeit und Echtzeitfähigkeit aus den gängigen Normen und Standards der Luft"= und Raumfahrt abgeleitet und formalisiert.
+Mit Hilfe dieser Kriterien lässt sich ein Platzierungsproblem bei einem Steuersystem präzise und eindeutig beschreiben.
+Dies bildet die Grundlage für den nächsten konzeptionellen Schritt: die Entwicklung eines Verfahrens zur \emph{Lösung} eines Platzierungsproblems.
 
+Der Ansatz zur Lösung eines Platzierungsproblems besteht in dessen Modellierung als mathematisches \emph{Constraint Satisfaction Problem} -- auch Bedingungserfüllungsproblem genannt.
+Dies ist eine spezielle Klasse von mathematischen Problemstellungen, bei denen für eine Menge von ganzzahligen Variablen eine gültige Belegung gesucht wird, die allen gestellten Randbedingungen (\emph{engl.: Constraints}) genügt.
+Der große Vorteil dieser speziellen Modellierungsform besteht darin, dass sie rein deskriptiv erfolgt.
+Es muss lediglich spezifiziert werden, welche Anforderungen eine korrekte Platzierung erfüllen muss, aber nicht, wie eine korrekte Platzierung gefunden werden kann.
+Die Synthese von Lösungen wird stattdessen leistungsfähigen und sehr effizienten Algorithmen überlassen.
+Der zentrale Beitrag dieser Arbeit besteht daher in der Modellierung eines räumlichen und zeitlichen Platzierungsproblems als \emph{Constraint Satisfaction Problem}.
+Dies ist die Voraussetzung, um die konstruktiv"=kreative Tätigkeit der Platzierung von Softwarekomponenten mit Hilfe eines Computers zu automatisieren.
+
+Die Konstruktion einer korrekten -- und damit realisierbaren -- Platzierung ist in der Praxis noch nicht ausreichend.
+Eine Platzierung muss darüber hinaus auch verschiedenen projektspezifischen Optimierungskriterien genügen.
+Sie muss beispielsweise die zukünftige Erweiterbarkeit des Steuersystems erleichtern, in dem sie die verfügbaren Ressourcen nicht zu 100\% auslastet, um eine Reserve für zukünftige funktionale Erweiterungen bei den Softwarekomponenten zu schaffen.
+Die Herausforderung besteht daher in der Konstruktion einer korrekten \emph{und} optimierten Platzierung.
+
+Obwohl bereits äußerst effiziente Algorithmen zur Lösung eines Platzierungsproblems eingesetzt werden, ist der vorliegende Lösungsraum bei realistischen Steuersystemen noch immer zu groß, um in sinnvollen Zeiträumen \emph{vollständig} durchsucht zu werden und damit eine korrekte und optimale Platzierung zu finden.
+Selbst bei einem kleinen System mit nur 10 Prozessoren und lediglich 25 Softwarekomponenten gibt es theoretisch bereits $10^{25}$ Platzierungsmöglichkeiten für die einzelnen Softwarekomponenten.
+Selbstverständlich sind nicht alle Platzierungen realisierbar und in Hinblick auf die gestellten Optimierungskriterien geeignet, aber welche dieser Lösungen wären es?
+Selbst wenn man jede Möglichkeit innerhalb einer Hundertstelsekunde diesbezüglich analysieren könnte, würde es noch immer mehr als $3~170~979~198~376~458$ Jahre dauern, bis man den vorliegenden Lösungsraum \emph{vollständig} durchsucht hat.
+Aus diesem Grund wurden im Rahmen der Dissertation hochoptimierte Strategien und spezielle Heuristiken entwickelt, um auch bei einer \emph{unvollständigen} Durchsuchung des Lösungsraums,  möglichst viele korrekte und zugleich auch "`gute"' Platzierungen zu finden.
+ 
 \subsubsection{Praktischer Teil: Softwarewerkzeug und Fallbeispiele}
 
 
