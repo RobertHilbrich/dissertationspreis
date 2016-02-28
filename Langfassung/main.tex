@@ -44,7 +44,7 @@ Sind unsere Entwicklungsmethoden und "=werkzeuge auch zukünftig "`mächtig"' genu
 
 Die Steuersysteme im Auto und Flugzeug bestehen aus vielen vernetzten Computern.
 Sie interagieren mit zahlreichen Sensoren und Aktuatoren, um ihre Aufgaben zu erfüllen.
-Ein vollwertiges "`Fly-by-Wire"' Steuersystem für Verkehrsflugzeuge setzt sich aus über 40 vernetzten Computern zusammen, die jeweils für die Durchführung und Überwachung der Ansteuerung einzelner Steuerflächen verantwortlich sind (siehe Abb.~\ref{fig:fcs}).
+Ein vollwertiges "`Fly-by-Wire"' Flugleitsystem für Verkehrsflugzeuge setzt sich aus über 40 vernetzten Computern zusammen, die jeweils für die Durchführung und Überwachung der Ansteuerung einzelner Steuerflächen verantwortlich sind (siehe Abb.~\ref{fig:fcs}).
 
 \begin{figure}[h!tbp]
   \centering
@@ -52,7 +52,6 @@ Ein vollwertiges "`Fly-by-Wire"' Steuersystem für Verkehrsflugzeuge setzt sich a
   \caption{Steuerflächen eines modernen Steuersystems in einem Verkehrsflugzeug}
   \label{fig:fcs}
 \end{figure}
-
 
 Moderne Fahrzeuge beinhalten nicht selten mehr als 75 Computer, um die Vielzahl an Funktionen zu realisieren.
 Die Entwicklung derartiger Steuersysteme gerät in Anbetracht dieser Komplexität an ihre Grenzen.
@@ -236,14 +235,11 @@ Aus diesem Grund wurden im Rahmen der Dissertation hochoptimierte Strategien und
  
 \subsubsection{Praktischer Teil: Softwarewerkzeug und Fallbeispiele}
 
-\begin{itemize}
-\item Es bleibt nicht nur bei den konzeptionellen Erweiterungen / Ergebnissen
-\item Das Verfahren wird auch als Softwarewerkzeug ASSIST (siehe Abb.~\ref{fig:assist}) realisiert
-\item Ein Fachexperte kann in einer textuellen Eingabesprache das Platzierungsproblem spezifizieren
-\item Die Sprache orientiert sich an den Begrifflichkeiten der Industrie, um den Einstieg und die Verwendung zu erleichtern
-\item Nach der Spezifikation wird die Transformation des Problems in ein CSP und dessen Lösung automatisiert vorgenommen;
-\item Die Lösungen des CSP (also die Belegungen der einzelnen Variablen) werden auch wieder rücktransformiert, so dass die technische Seite der Problemlösung vor dem Anwender vollständig verborgen ist
-\end{itemize}
+Im Rahmen der Dissertation sind auch konkrete, praktische Ergebnisse erzielt worden, um die Realisierbarkeit der konzeptionellen Beiträge nachzuweisen.
+Dazu wurde das entwickelte Verfahren zur Platzierung von Softwarekomponenten als Softwarewerkzeug mit dem Namen  \emph{Architecture Synthesis for Safety Critical Systems - ASSIST} implementiert (siehe Abb.~\ref{fig:assist}).
+Mit Hilfe von ASSIST kann der Entwickler eines Steuersystems sein vorliegende Platzierungsproblem \emph{textuell} beschreiben.
+Die Grammatik dieser Eingabesprache erlaubt die Spezifikation einer Vielzahl von unterschiedlichen Platzierungsproblemen und orientiert sich an den feststehenden Begrifflichkeiten der Systemarchitekturen in der Luft"= und Raumfahrt.
+Dies erleichtert die Verwendung des Werkzeugs für Fachexperten aus diesem Bereich deutlich.
 
 \begin{figure}[htbp]
   \centering
@@ -252,11 +248,26 @@ Aus diesem Grund wurden im Rahmen der Dissertation hochoptimierte Strategien und
   \label{fig:assist}
 \end{figure}
 
-\begin{itemize}
-\item Demonstration des Einsatzes dieses Werkzeugs mit Hilfe von zwei Fallbeispielen
-\item FCS von Liebherr Aerospace "= Schwerpunkt war hier ...
-\item Steuersystem für Raumfahrzeuge 
-\end{itemize}
+Für ein derart spezifiziertes Platzierungsproblem generiert das Werkzeug ASSIST automatisch ein äquivalentes Constraint Satisfaction Problem.
+Mit Hilfe der speziellen Strategien und Heuristiken werden im Anschluss Lösungen gesucht.
+Der Anwender kann die gefundenen Platzierungen nach verschiedenen Kriterien automatisiert bewerten lassen und damit innerhalb von wenigen Minuten auf einem regulären Desktop"=Computer korrekte und optimierte Platzierungen für komplexe Steuersysteme erhalten.
+Die Abläufe im Hintergrund und die Struktur des Lösungsraums sind vor dem Anwender vollständig verborgen. 
+Seine Aufgabe beschränkt sich auf die vollständige Spezifikation des Platzierungsproblems und auf die anschließende Auswahl der automatisch bewerteten Lösungsalternativen.
+
+Die Anwendung des entwickelten Verfahrens und der Einsatz der Werkzeugs ASSIST wird anhand von zwei Steuersystemen mit hohen Zuverlässigkeits"= und Echtzeitanforderungen demonstriert.
+Im ersten Fallbeispiel wird die Architektur eines Flugleitsystems betrachtet. Die besondere Herausforderung liegt hier in der korrekten Berücksichtigung aller Redundanzanforderungen, um die geforderte Zuverlässigkeit des Systems zu gewährleisten.
+In Abhängigkeit von der Kritikalität der Funktion eines Steuersystems, kann eine Redundanz mit Hilfe von gleichartigen Softwarekomponenten, die auf unterschiedlichen Prozessoren ausgeführt werden, nicht mehr ausreichend sein.
+Bei besonders kritischen Funktionen muss ein hohes Maß an \emph{Dissimilarität} zwischen den redundanten Softwarekomponenten erzielt werden, um die Auswirkungen von unentdeckten Fehlern zu minimieren.
+Konkret bedeutet dies, dass die jeweiligen Softwarekomponenten zunächst von unterschiedlichen Teams entwickelt und getestet werden müssen.
+Darüber hinaus müssen die Softwarekomponenten aber auch auf \emph{unterschiedlichen} Prozessoren von \emph{unterschiedlichen} Herstellern ausgeführt werden, um eine möglichst hohe Zuverlässigkeit zu gewährleisten.
+Die Platzierung von Softwarekomponenten muss diese Anforderungen ebenfalls berücksichtigen und geeignete Prozessoren zur Ausführung der redundanten Softwarekomponenten auswählen.
+
+Das zweite Fallbeispiel befasst sich mit der Architektur eines Steuersystems für Raumfahrzeuge.
+Hier liegt der Fokus auf der richtigen Behandlung von Softwarekomponenten, die aus mehr als einem Kontrollfluss bestehen und die parallel arbeitenden Kerne moderner Prozessoren ausnutzen \emph{müssen}, um die erforderliche Leistung zu erbringen.
+Darüber hinaus werden hier auch die Herausforderungen eines Systems mit unterschiedlichen Ressourcenkonfigurationen für unterschiedliche Betriebsmodi adressiert.
+In Abhängigkeit von der Flugphase eines Raumfahrzeugs werden die Prozessoren eines Steuersystems beispielsweise unterschiedlich genutzt. 
+Sie können entweder zur Steigerung der Zuverlässigkeit oder zur Erhöhung der Rechenleistung eingesetzt werden, indem notwendige Berechnungen entweder auf mehreren Prozessoren oder nur auf einem Prozessor durchgeführt werden.
+Dieses Fallbeispiel belegt, dass Platzierungen von Softwarekomponenten für die unterschiedlichen Ressourcenkonfigurationen in kurzer Zeit erstellt und optimiert werden können, so dass sich die Entwicklungszeit eines derartigen Steuersystems signifikant verkürzt.
 
 \section{Gesellschaftliche Bedeutung}
 \label{sec:gesellsch-bede}
