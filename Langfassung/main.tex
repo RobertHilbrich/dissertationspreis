@@ -74,7 +74,7 @@ Eine vollständige und fehlerlose Berücksichtigung \emph{aller} Anforderungen bei
 
 Spätestens mit der Nutzung der neuen \emph{Mehrkernprozessoren} ist die Grenze der durch menschliche Entwickler sicher beherrschbare Komplexität überschritten.
 Während klassische \emph{Einkernprozessoren} die Ausführung von nur \emph{einer} Softwarekomponente zu jedem Zeitpunkt ermöglichten und daher auch nur eine kleine Anzahl an Softwarekomponenten pro Prozessor integriert werden konnte, bieten \emph{Mehrkernprozessoren} aufgrund ihrer deutlich gestiegenen Rechenleistung mehr Flexibilität.   
-Mit Hilfe ihrer unabhängig arbeitenden Rechenkerne ermöglichen sie erstmals eine \emph{parallele Ausführung} verschiedener Softwarekomponenten zur gleichen Zeit, so dass -- zumindest theoretisch -- wesentlich mehr Softwarekomponenten auf einem Prozessor integeriert werden können.  
+Mit Hilfe ihrer unabhängig arbeitenden Rechenkerne ermöglichen sie erstmals eine \emph{parallele Ausführung} verschiedener Softwarekomponenten zur gleichen Zeit, so dass -- zumindest theoretisch -- wesentlich mehr Softwarekomponenten auf einem Prozessor integriert werden können.  
 Mittlerweile sind Mehrkernprozessoren mit über 1000 parallel arbeitenden Rechenkernen frei verfügbar.
 Im Vergleich zu den klassischen \emph{Einkernprozessoren} versprechen sie einerseits eine deutliche Steigerung der Rechenleistung bei einem äußerst geringen Energieverbrauch und stellen damit vielversprechende "`Lösungsbausteine"' für die Steuersysteme der Zukunft dar. 
 Andererseits überschreitet eine präzise und vollständige a~priori Abschätzung \emph{aller} Auswirkungen dieser starken Konzentration von Softwarekomponenten auf einem Mehrkernprozessor und der daraus resultierenden Ressourcenkonkurrenz das Vermögen menschlicher Entwickler.
@@ -266,22 +266,30 @@ Das zweite Fallbeispiel befasst sich mit der Architektur eines Steuersystems für
 Hier liegt der Fokus auf der richtigen Behandlung von Softwarekomponenten, die aus mehr als einem Kontrollfluss bestehen und die parallel arbeitenden Kerne moderner Prozessoren ausnutzen \emph{müssen}, um die erforderliche Leistung zu erbringen.
 Dieses Fallbeispiel belegt, dass Platzierungen von Softwarekomponenten auch für die unterschiedlichen Ressourcenkonfigurationen in kurzer Zeit erstellt und optimiert werden können, so dass sich die Entwicklungszeit eines derartigen Steuersystems signifikant verkürzt.
 
-\section{Gesellschaftliche Bedeutung}
+\section{Gesellschaftliche Bedeutung der Ergebnisse}
 \label{sec:gesellsch-bede}
 
+In der zugrunde liegenden Dissertation wird eine für die zukünftige Entwicklung unserer Fahrzeuge äußerst relevante Fragestellung von der theoretischen Entwicklung eines Lösungsansatzes bis hin zu dessen praktischer Realisierung als Softwarewerkzeug bearbeitet. 
+Die gesellschaftliche Bedeutung der gewonnenen Ergebnisse ist -- wie bereits erwähnt -- zweischichtig.
 
-Zunächst die Bedeutung für Industrie:
-\begin{itemize}
-\item Arbeit schlägt die Brücke zwischen der Theorie und Praxis
-\item Werkzeug erlaubt es auch einem Fachexperten, die Forschritte aus dem Bereich der Informatik nutzen zu können
-\item ASSIST ist frei verfügbar; Quellcode ist offen und für jeden nutzbar
-\item Nächster Schritt: Gründung eines Industriekonsortiums unter dem Dach der Eclipse Foundation
-\item Zunächst kann damit die Entwicklung von Systemen beschleunigt werden
-\item Systeme können optimiert werden, so dass weniger Ressourcen benötigt werden 
-\item Weniger Fehler im System 
-\item Optimierungen sind zugänglich, die bisher aufgrund der hohen Komplexität nicht möglich waren - damit weniger CO2, weniger Gewicht, effizientere Systeme, ...
-\item Konkret zeigt sich dies auch beim Einsatz von ASSIST bei einem großen Flugzeughersteller
-\end{itemize}
+Für die Industrie im Bereich der Luft"= und Raumfahrt erhöht sich damit die Grenze der beherrschbaren Komplexität bei der Entwicklung neuer Steuersysteme.
+Mit Hilfe des entwickelten Werkzeugs ASSIST können Systemarchitekten mit geringen IT Kenntnissen die wissenschaftlichen Fortschritte in der Informatik unmittelbar für ihre Arbeit nutzen.
+Dies verkürzt die Entwicklungszeiten von komplexen Steuersystemen und reduziert die Wahrscheinlichkeit für unentdeckte Fehler.
+Zudem kann die Leistungsfähigkeit moderner Prozessoren durch eine höhere Verdichtung der Funktionen besser ausgenutzt werden, ohne unbeabsichtigte Auswirkungen auf die Zuverlässigkeit und Echtzeitfähigkeit befürchten zu müssen.
+
+Einerseits erlaubt dies eine Erweiterung der Funktionalität eines Steuersystems, um auch zukünftigen Aufgaben  gerecht zu werden.
+Andererseits wird mit Hilfe des Werkzeugs auch eine effizientere Nutzung "`teurer"' Ressourcen ermöglicht, so dass neben den Materialkosten auch der Energieverbrauch und das Gewicht eines Steuersystems reduziert werden können.
+Dies resultiert -- insbesondere im Bereich der Luft"= und Raumfahrt -- in signifikanten Einsparungen beim benötigten Treibstoff sowie deutlich reduzierten $CO_2$ Emissionen.
+
+Die hohe Bedeutung der Ergebnisse für die Industrie in der Luft"= und Raumfahrt wird unter anderem auch durch den derzeitigen Einsatz des Werkzeugs bei einem großen Hersteller ziviler Verkehrsflugzeuge unterstrichen.
+Mit Hilfe des Werkzeugs sind hier erstmals tiefgreifende Optimierungen in der Architektur existierender Steuersysteme zugänglich, die bisher aufgrund ihrer Komplexität und einer daraus resultierenden Unsicherheit bezüglich ihrer Realisierbarkeit vermieden wurden.
+
+Das im Rahmen der Dissertation entwickelte Softwarewerkzeug ASSIST ist im Internet unter der Adresse \url{http://assist.hilbri.ch} frei verfügbar.
+Auch der Quellcode für die im Werkzeug enthaltenen Algorithmen und Transformationen ist unter einer \emph{Open Source} Lizenz im Internet veröffentlicht, so dass \emph{jeder} von den Ergebnissen profitieren kann.
+Der nächste Schritt zur Dissemination der Ergebnisse besteht in der Gründung eines Industriekonsortiums zur Förderung der Weiterentwicklung des Werkzeugs unter dem Dach der gemeinnützigen \emph{Eclipse Foundation}.
+
+
+\textbf{Bis hier überarbeitet}
 
 Aber, diese Arbeit ist ein guter Gegenstand, um Fragen nach der Beherrschbarkeit heutiger Technologien zu stellen und zu diskutieren
 
