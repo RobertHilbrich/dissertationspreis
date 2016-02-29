@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}  
 \usepackage{lmodern}
 \usepackage{graphicx}
+\usepackage{url}
 
 \begin{document}
 % ----------------------------------------------------------------------------
@@ -12,7 +13,12 @@
 %\subject{Art des Dokuments}
 \title{Automatisierung und Kreativität}
 \subtitle{Ist die Grenze beherrschbarer Komplexität erreicht?}
-\author{Dr. Robert Hilbrich}
+\author{%
+Dr. Robert Hilbrich\\%
+{\normalsize Deutsches Zentrum für Luft- und Raumfahrt e.V.}\\%
+{\small \url{robert.hilbrich@dlr.de}}%
+}
+
 \date{}
 %\publishers{Platz für Betreuer o.\,ä.}
 \maketitle
@@ -64,14 +70,14 @@ Der Mensch erschafft mit seiner Arbeit etwas Neues und Originelles -- zum Beispi
 Erst die Transformation dieser neuen "`Artefakte"' in Maschinencode und deren Analyse auf Programmierfehler wird durch den Computer durchgeführt. 
 
 Aufgrund dieser Arbeitsteilung ist die Komplexität der zu entwickelnden Systeme durch die menschliche Verarbeitungskapazität begrenzt, denn der Entwickler kann nur eine begrenzte Zahl an Anforderungen an ein neu zu entwickelndes System verarbeiten und diese auch nur mit einer begrenzten Zahl zur Verfügung stehender "`Lösungsbausteine"' in Übereinkunft bringen. 
-Eine vollständige und fehlerlose Berücksichtigung \emph{aller} Anforderungen bei der Systementwicklung übersteigt bereits heute in vielen Fällen die Verarbeitungskapazität der Entwickler.
+Eine vollständige und fehlerlose Berücksichtigung \emph{aller} Anforderungen bei der Systementwicklung übersteigt bereits heute in vielen Fällen die menschliche Verarbeitungskapazität.
 
-Spätestens mit der Nutzung der neuen \emph{Mehrkernprozessoren} ist die Grenze der sicher beherrschbaren Komplexität überschritten.
+Spätestens mit der Nutzung der neuen \emph{Mehrkernprozessoren} ist die Grenze der durch menschliche Entwickler sicher beherrschbare Komplexität überschritten.
 Während klassische \emph{Einkernprozessoren} die Ausführung von nur \emph{einer} Softwarekomponente zu jedem Zeitpunkt ermöglichten und daher auch nur eine kleine Anzahl an Softwarekomponenten pro Prozessor integriert werden konnte, bieten \emph{Mehrkernprozessoren} aufgrund ihrer deutlich gestiegenen Rechenleistung mehr Flexibilität.   
 Mit Hilfe ihrer unabhängig arbeitenden Rechenkerne ermöglichen sie erstmals eine \emph{parallele Ausführung} verschiedener Softwarekomponenten zur gleichen Zeit, so dass -- zumindest theoretisch -- wesentlich mehr Softwarekomponenten auf einem Prozessor integeriert werden können.  
 Mittlerweile sind Mehrkernprozessoren mit über 1000 parallel arbeitenden Rechenkernen frei verfügbar.
-Im Vergleich zu den klassischen \emph{Einkernprozessorenn} versprechen sie eine deutliche Steigerung der Rechenleistung bei einem äußerst geringen Energieverbrauch und stellen damit vielversprechende "`Lösungsbausteine"' für die Steuersysteme der Zukunft dar. 
-Allerdings überschreitet eine präzise und vollständige a~priori Abschätzung \emph{aller} Auswirkungen dieser starken Konzentration von Softwarekomponenten auf einem Mehrkernprozessor und der daraus resultierenden Ressourcenkonkurrenz das Vermögen menschlicher Entwickler.
+Im Vergleich zu den klassischen \emph{Einkernprozessoren} versprechen sie einerseits eine deutliche Steigerung der Rechenleistung bei einem äußerst geringen Energieverbrauch und stellen damit vielversprechende "`Lösungsbausteine"' für die Steuersysteme der Zukunft dar. 
+Andererseits überschreitet eine präzise und vollständige a~priori Abschätzung \emph{aller} Auswirkungen dieser starken Konzentration von Softwarekomponenten auf einem Mehrkernprozessor und der daraus resultierenden Ressourcenkonkurrenz das Vermögen menschlicher Entwickler.
 Sie können die Zuverlässigkeit eines Systementwurfs auf Basis von Mehrkernprozessoren nur noch sehr eingeschränkt beurteilen.   
 
 Derart hochkomplexe Systeme führen nicht nur die menschliche Entwicklungsarbeit an ihre Grenzen.
@@ -85,49 +91,46 @@ Ihre Weiterentwicklung ist die Voraussetzung, um auch zukünftig effiziente Steue
 
 Ein möglicher Ansatz zur Lösung dieser Problematik liegt in der \emph{Automatisierung} der kreativ"=konstruktiven Tätigkeiten. 
 Dies bricht mit der traditionellen Arbeitsteilung in der Entwicklung.
-Bei diesem Ansatz besteht die Aufgabe des menschlichen Entwicklers darin, die Anforderungen an das zu entwickelnde Steuersystem vollständig, präzise und fehlerfrei zu beschreiben.
-Im Anschluss konstruiert der Computer unter Zuhilfenahme der verfügbaren Lösungsbausteine automatisiert ein geeignetes "`Artefakt"', das alle gestellten Anforderungen erfüllt.
+Bei diesem Ansatz besteht die Aufgabe des menschlichen Entwicklers darin, die Anforderungen an das zu entwickelnde Steuersystem vollständig, präzise und fehlerfrei zu beschreiben und dem Computer damit einen "`Rahmen"' vorzugeben, innerhalb dessen er unter Zuhilfenahme der verfügbaren Lösungsbausteine automatisiert ein geeignetes "`Artefakt"' konstruiert, das alle gestellten Anforderungen erfüllt.
 
 Vorteile dieses Ansatzes liegen zum einen darin, dass Computer in der Lage sind, die gestellten Anforderungen \emph{vollständiger} und \emph{präziser} mit den technischen Möglichkeiten in Übereinkunft zu bringen.
 Die Grenze der beherrschbaren Komplexität lässt sich damit nach oben verschieben.
-Zum anderen eröffnet die Automatisierung der Konstruktion die Möglichkeit, die Korrektheit eines Systems auf der Grundlage seines Konstruktionsprozesses zu begründen anstatt dafür eine unvollständige Beobachtung des Systemverhaltens zu verwenden.
-Daher ist die Automatisierung der kreativ"=konstruktiven Tätigkeiten eine zentrale Herausforderung für die ingenieurwissenschaftliche Forschung im Bereich der Systementwicklung, um die Weiterentwicklung von Steuersystemen zu ermöglichen und auch zukünftig deren Zuverlässigkeit zu gewährleisten.  
+Zum anderen eröffnet die Automatisierung der Konstruktion die Möglichkeit, die Korrektheit eines Systems auf der Grundlage seines Konstruktionsprozesses zu beurteilen anstatt dafür eine unvollständige Beobachtung des Systemverhaltens zu verwenden.
+Daher ist die Automatisierung der kreativ"=konstruktiven Tätigkeiten eine lohnende Herausforderung für die ingenieurwissenschaftliche Forschung im Bereich der Systementwicklung, um die Weiterentwicklung von Steuersystemen zu ermöglichen und auch zukünftig deren Zuverlässigkeit zu gewährleisten.  
 
-Die zugrunde liegende Dissertation befasst sich mit der automatisierten Konstruktion eines zentralen "`Artefakts"' eines Steuersystems: der Platzierung der verschiedenen Softwarekomponenten auf den Computern eines Steuersystems.
+Die zugrunde liegende Dissertation befasst sich mit der automatisierten Konstruktion eines zentralen "`Artefakts"' eines Steuersystems: der Platzierung von Softwarekomponenten auf den Computern eines Steuersystems.
 Diese Zuweisung von "`Ressourcen"', wie beispielsweise Rechenzeit auf einem Prozessorkern oder einem Bereich im Arbeitsspeicher, zu einer Softwarekomponente ist scheinbar unspektakulär, doch dieser Eindruck trügt.
 Ein Steuersystem kann seine Funktion meist nur dann erbringen, wenn seine Softwarekomponenten die "`richtigen"' Ressourcen in "`ausreichender"' Menge zum "`richtigen"' Zeitpunkt bekommen.
 Wenn die Softwarekomponente zur Auslösung der Airbags im Auto beispielsweise nicht rechtzeitig Rechenzeit auf dem Prozessor bekommt, dann besteht die Gefahr einer verzögerten Auslösung.
 Die Schutzfunktion des Airbags ist damit gefährdet. 
 
-Neben der korrekten Berücksichtigung von solchen zeitkritischen Softwarekomponenten, muss die Konstruktion einer Platzierung von Softwarekomponenten auch die Auswirkungen auf die Zuverlässigkeit in Betracht ziehen.
-So wird bei Steuersystemen eine hohe Zuverlässigkeit meist durch den Einsatz redundant arbeitender Softwarekomponenten realisiert. 
-Sobald eine Komponente bedingt durch einen technischen Fehler ausfällt, kann eine andere Komponente dessen Aufgaben übernehmen.
-Dies funktioniert selbstverständlich nur dann, wenn alle redundanten Softwarekomponenten auf \emph{unterschiedlichen} Prozessoren platziert wurden.
-Eine "`richtige"' und "`ausreichende"' Zuweisung von Ressourcen ist daher für ein Steuersystem -- und auch für viele andere Systeme -- von \emph{essentieller} Bedeutung.
-Die Entwicklung einer Zuweisung steht daher in dem Zielkonflikt, einerseits eine hohe Zuverlässigkeit durch die Verwendung möglichst vieler Prozessoren gewährleisten zu müssen und andererseits eine hohe Integration von Softwarekomponenten auf möglichst wenigen Prozessoren zu realisieren.
-  
-Die Konstruktion einer Ressourcenzuweisung für alle Softwarekomponenten eines Steuersystems ist sehr aufwändig und fehlerträchtig.
+Gleichzeitig kann eine geschickte Platzierung von Softwarekomponenten auch eine Reduzierung der Materialkosten eines Steuersystems bewirken, indem "`teure"' Ressourcen nicht nur exklusiv durch \emph{eine} Softwarekomponente verwendet werden.
+Mit Hilfe von speziellen Isolationstechniken können diese Ressourcen auch zwischen verschiedenen Softwarekomponenten geteilt werden.
+Bei einer derartigen Konzentration von Funktionen müssen allerdings auch die Auswirkungen auf die Zuverlässigkeit des Steuersystems berücksichtigt werden, denn der Ausfall eines Prozessors beeinträchtigt dann beispielsweise wesentlich mehr Softwarekomponenten.
+Die Konstruktion einer Platzierung steht daher in dem Zielkonflikt, einerseits eine hohe Zuverlässigkeit durch die Verwendung möglichst vieler Prozessoren gewährleisten zu müssen und andererseits eine hohe Integration von Softwarekomponenten auf möglichst wenigen Prozessoren zu realisieren.
+ 
+Die Zuweisung von Ressourcen für alle Softwarekomponenten eines Steuersystems ist sehr aufwändig und fehlerträchtig.
 Dazu müssen bereits während der Entwicklung \emph{alle} theoretisch möglichen Ausfälle technischer Komponenten adäquat berücksichtigt und \emph{alle} Ressourcenzugriffe der zeitkritischen Softwarekomponenten koordiniert werden.
-Dies erfordert ein präzises und vollständiges Verständnis sowohl der Ressourcenbedarfe \emph{aller} Softwarekomponenten als auch der Kapazitäten und Eigenschaften \emph{aller} verfügbaren Ressourcen -- zum Beispiel Prozessoren, Speicherbusse, Gerätecontroller, \dots. 
+Dies erfordert ein präzises und vollständiges Verständnis sowohl der Ressourcenbedarfe \emph{aller} Softwarekomponenten als auch der Kapazitäten und Eigenschaften \emph{aller} verfügbaren Ressourcen -- zum Beispiel Prozessoren, Speicherbusse oder Gerätecontroller. 
 Während eine solche Ressourcenzuweisung in der Vergangenheit noch manuell konstruiert werden konnte, ist dies bei Mehrkernprozessoren nicht länger sinnvoll möglich.
 Das resultierende Komplexitätsniveau macht eine Weiterentwicklung der etablierten Verfahren zwingend notwendig. 
 Vor dem Hintergrund dieser Herausforderung wird in der zugrunde liegenden Dissertation ein \emph{automatisiertes Verfahren} zur Konstruktion einer Ressourcenzuweisung entwickelt.
 Dieses Verfahren wird als Software"=Werkzeug umgesetzt und anhand von zwei Fallbeispielen aus der Luft- und Raumfahrt erprobt.
 
 Die gesellschaftliche Bedeutung der Ergebnisse der zugrunde liegenden Arbeit ist zweischichtig.
-Zum einen belegen die Ergebnisse, dass sich auch komplexe kreativ"=konstruktive Entwicklungsaufgaben automatisieren lassen.
+Zum einen belegen die Ergebnisse, dass sich auch komplexe kreativ"=konstruktive Entwicklungsaufgaben durch eine geeignete Formalisierung der Aufgabenstellung und ihrer Randbedingungen automatisieren lassen.
 In kürzerer Zeit können effizientere und optimierte Steuersysteme entwickelt werden, ohne dabei unbeabsichtigte Beeinträchtigungen in der Zuverlässigkeit befürchten zu müssen.
 Das Niveau der beherrschbaren Komplexität wird durch das entwickelte Verfahren signifikant angehoben.
 
-Mittlerweile wird dieses Verfahren in leicht angepasster Form bei einem Hersteller ziviler Flugzeuge zur Optimierung der Systemarchitektur eines Flugzeugtyps produktiv eingesetzt.
+Nach dem erfolgreichen Abschluss der Dissertation wird dieses Verfahren in leicht angepasster Form bei einem Hersteller ziviler Flugzeuge zur Optimierung der Systemarchitektur eines Flugzeugtyps produktiv eingesetzt.
 Durch den Einsatz des Software"=Werkzeugs konnte die benötigte Zeitdauer für die Konstruktion \emph{einer} vollständigen und fehlerfreien Zuweisung von ehemals ca. 12-15~Monaten auf den Zeitraum von etwa 5~Minuten reduziert werden.
-In der Folge konnten erstmals viele unterschiedliche Zuweisungen konstruiert und miteiander verglichen werden, so dass letztendlich auch Geräte eingespart werden konnten.
-Dies resultiert in einem geringeren Gesamtgewicht des Flugzeugs und wird zu einer Reduzierung der $CO_2$ Emissionen beitragen.
+In der Folge konnten erstmals viele unterschiedliche Zuweisungen konstruiert und miteinander verglichen werden, so dass letztendlich auch Geräte eingespart und Materialkosten gesenkt werden konnten.
+Dies resultiert in einem geringeren Gesamtgewicht des Flugzeugs und wird zu einer Reduzierung von dessen $CO_2$ Emissionen beitragen.
 
 Zum anderen bildet diese Arbeit einen wichtigen Ausgangspunkt für eine längst überfällige Debatte über die Beherrschbarkeit der Komplexität zukünftiger Computersysteme.
 Was passiert mit der technischen Kompetenz einer Gesellschaft, wenn die Entwicklung der zentralen Steuersysteme unserer zukünftigen Fahrzeuge in immer kürzerer Zeit durch Computer durchgeführt wird?
 Besteht dann nicht die Gefahr, dass nicht nur die Anwender, sondern auch die Entwickler eines Steuersystems, dieses immer mehr als "`Black Box"' begreifen?
-Ist es dann noch immer zu verantworten, dass diese Systeme immer mehr Verantwortung für unsere Sicherheit übernehmen? 
+Ist es dann noch immer wünschenswert, dass diese Systeme in zunehmendem Maße Verantwortung für unsere Sicherheit übernehmen? 
 
 In den nächsten Abschnitten werden zunächst die einzelnen Ergebnisse der Dissertation vorgestellt.
 Anschließend wird die gesellschaftliche Relevanz der gewonnenen Erkenntnisse herausgearbeitet, um eine Einordnung der Bedeutung der zugrunde liegenden Dissertation zu ermöglichen.
@@ -148,7 +151,7 @@ Im methodischen Teil wird ein Vorgehensmodell entwickelt, das einen neuartigen A
 
 Der konzeptuelle Teil bildet das Herzstück der Arbeit.
 Er enthält die im Rahmen dieser Arbeit entwickelten Formalismen, mit denen die Anforderungen und die Freiheitsgrade einer Platzierung eindeutig und maschinenlesbar spezifiziert werden können.
-Hier werden auch die neuen Transformationen vorgestellt, mit deren Hilfe ein formal spezifiziertes Platzierungsproblem auf einen generischen, mathematischen Formalismus -- ein \emph{Constraint Satisfaction Problem} -- überführt werden kann.
+Hier werden auch die neuen Transformationen vorgestellt, mit deren Hilfe ein formal spezifiziertes Platzierungsproblem auf einen generischen, mathematischen Formalismus -- ein \emph{Constraint Satisfaction Problem} -- überführt und so modellhaft beschrieben werden kann.
 Diese Überführung ist die Voraussetzung für den Einsatz effizienter Algorithmen, mit denen Lösungen für ein derartiges \emph{Constraint Satisfaction Problem} automatisiert erstellt werden können.
 
 Im praktischen Teil wird die Umsetzung dieses Verfahrens in Form des Softwarewerkzeugs ASSIST dokumentiert.
@@ -211,7 +214,7 @@ Bei Steuersystemen in Fahrzeugen sind es vor allem zwei Aspekte, die neben der r
 Zuverlässigkeit beschreibt die Robustheit des Systems in Gegenwart von Fehlern und Ausfällen, während Echtzeitfähigkeit die "`rechtzeitige"' Ausführung aller zeitkritischen Funktionen beinhaltet. 
 Eine Platzierung ist daher erst dann korrekt, wenn sie alle Zuverlässigkeits"= und Echtzeitanforderungen erfüllt.
 In der Dissertation wurden die relevanten Korrektheitskriterien einer Platzierung für die Aspekte Zuverlässigkeit und Echtzeitfähigkeit aus den gängigen Normen und Standards der Luft"= und Raumfahrt abgeleitet und formalisiert.
-Mit Hilfe dieser Kriterien lässt sich ein Platzierungsproblem bei einem Steuersystem präzise und eindeutig beschreiben.
+Mit ihrer Hilfe lässt sich ein Platzierungsproblem bei einem Steuersystem präzise und eindeutig beschreiben.
 Dies bildet die Grundlage für den nächsten konzeptionellen Schritt: die Entwicklung eines Verfahrens zur \emph{Lösung} eines Platzierungsproblems.
 
 Der Ansatz zur Lösung eines Platzierungsproblems besteht in dessen Modellierung als mathematisches \emph{Constraint Satisfaction Problem} -- auch Bedingungserfüllungsproblem genannt.
@@ -227,17 +230,17 @@ Eine Platzierung muss darüber hinaus auch verschiedenen projektspezifischen Opti
 Sie muss beispielsweise die zukünftige Erweiterbarkeit des Steuersystems erleichtern, in dem sie die verfügbaren Ressourcen nicht zu 100\% auslastet, um eine Reserve für zukünftige funktionale Erweiterungen bei den Softwarekomponenten zu schaffen.
 Die Herausforderung besteht daher in der Konstruktion einer korrekten \emph{und} optimierten Platzierung.
 
-Obwohl bereits äußerst effiziente Algorithmen zur Lösung eines Platzierungsproblems eingesetzt werden, ist der vorliegende Lösungsraum bei realistischen Steuersystemen noch immer zu groß, um in sinnvollen Zeiträumen \emph{vollständig} durchsucht zu werden und damit eine korrekte und optimale Platzierung zu finden.
+Obwohl bereits heute äußerst effiziente Algorithmen zur Lösung eines Platzierungsproblems eingesetzt werden, ist der vorliegende Lösungsraum bei realen Steuersystemen noch immer zu groß, um mit Hilfe eines Computers in sinnvollen Zeiträumen \emph{vollständig} durchsucht zu werden und damit eine korrekte und optimale Platzierung zu finden.
 Selbst bei einem kleinen System mit nur 10 Prozessoren und lediglich 25 Softwarekomponenten gibt es theoretisch bereits $10^{25}$ Platzierungsmöglichkeiten für die einzelnen Softwarekomponenten.
 Selbstverständlich sind nicht alle Platzierungen realisierbar und in Hinblick auf die gestellten Optimierungskriterien geeignet, aber welche dieser Lösungen wären es?
 Selbst wenn man jede Möglichkeit innerhalb einer Hundertstelsekunde diesbezüglich analysieren könnte, würde es noch immer mehr als $3~170~979~198~376~458$ Jahre dauern, bis man den vorliegenden Lösungsraum \emph{vollständig} durchsucht hat.
-Aus diesem Grund wurden im Rahmen der Dissertation hochoptimierte Strategien und spezielle Heuristiken entwickelt, mit denen auch bei einer \emph{unvollständigen} Durchsuchung des Lösungsraums, möglichst viele korrekte und zugleich auch "`gute"' Platzierungen gefunden werden.
+Aus diesem Grund wurden im Rahmen der Dissertation auch hochoptimierte Strategien und spezielle Heuristiken entwickelt, mit denen auch bei einer \emph{unvollständigen} Durchsuchung des Lösungsraums, möglichst viele korrekte und zugleich auch "`gute"' Platzierungen gefunden werden.
  
 \subsubsection{Praktischer Teil: Softwarewerkzeug und Fallbeispiele}
 
 Im Rahmen der Dissertation sind auch konkrete, praktische Ergebnisse erzielt worden, um die Realisierbarkeit der konzeptionellen Beiträge nachzuweisen.
 Dazu wurde das entwickelte Verfahren zur Platzierung von Softwarekomponenten als Softwarewerkzeug mit dem Namen  \emph{Architecture Synthesis for Safety Critical Systems - ASSIST} implementiert (siehe Abb.~\ref{fig:assist}).
-Mit Hilfe von ASSIST kann der Entwickler eines Steuersystems sein vorliegende Platzierungsproblem \emph{textuell} beschreiben.
+Mit Hilfe von ASSIST kann der Entwickler eines Steuersystems sein vorliegendes Platzierungsproblem \emph{textuell} beschreiben.
 Die Grammatik dieser Eingabesprache erlaubt die Spezifikation einer Vielzahl von unterschiedlichen Platzierungsproblemen und orientiert sich an den feststehenden Begrifflichkeiten der Systemarchitekturen in der Luft"= und Raumfahrt.
 Dies erleichtert die Verwendung des Werkzeugs für Fachexperten aus diesem Bereich deutlich.
 
@@ -251,23 +254,17 @@ Dies erleichtert die Verwendung des Werkzeugs für Fachexperten aus diesem Bereic
 Für ein derart spezifiziertes Platzierungsproblem generiert das Werkzeug ASSIST automatisch ein äquivalentes Constraint Satisfaction Problem.
 Mit Hilfe der speziellen Strategien und Heuristiken werden im Anschluss Lösungen gesucht.
 Der Anwender kann die gefundenen Platzierungen nach verschiedenen Kriterien automatisiert bewerten lassen und damit innerhalb von wenigen Minuten auf einem regulären Desktop"=Computer korrekte und optimierte Platzierungen für komplexe Steuersysteme erhalten.
-Die Abläufe im Hintergrund und die Struktur des Lösungsraums sind vor dem Anwender vollständig verborgen. 
+Die Abläufe im Hintergrund und die Struktur des Lösungsraums sind vor dem Anwender verborgen. 
 Seine Aufgabe beschränkt sich auf die vollständige Spezifikation des Platzierungsproblems und auf die anschließende Auswahl der automatisch bewerteten Lösungsalternativen.
 
 Die Anwendung des entwickelten Verfahrens und der Einsatz der Werkzeugs ASSIST wird anhand von zwei Steuersystemen mit hohen Zuverlässigkeits"= und Echtzeitanforderungen demonstriert.
 Im ersten Fallbeispiel wird die Architektur eines Flugleitsystems betrachtet. Die besondere Herausforderung liegt hier in der korrekten Berücksichtigung aller Redundanzanforderungen, um die geforderte Zuverlässigkeit des Systems zu gewährleisten.
-In Abhängigkeit von der Kritikalität der Funktion eines Steuersystems, kann eine Redundanz mit Hilfe von gleichartigen Softwarekomponenten, die auf unterschiedlichen Prozessoren ausgeführt werden, nicht mehr ausreichend sein.
-Bei besonders kritischen Funktionen muss ein hohes Maß an \emph{Dissimilarität} zwischen den redundanten Softwarekomponenten erzielt werden, um die Auswirkungen von unentdeckten Fehlern zu minimieren.
-Konkret bedeutet dies, dass die jeweiligen Softwarekomponenten zunächst von unterschiedlichen Teams entwickelt und getestet werden müssen.
-Darüber hinaus müssen die Softwarekomponenten aber auch auf \emph{unterschiedlichen} Prozessoren von \emph{unterschiedlichen} Herstellern ausgeführt werden, um eine möglichst hohe Zuverlässigkeit zu gewährleisten.
-Die Platzierung von Softwarekomponenten muss diese Anforderungen ebenfalls berücksichtigen und geeignete Prozessoren zur Ausführung der redundanten Softwarekomponenten auswählen.
+In Abhängigkeit von der Kritikalität der Funktion eines Steuersystems, also ihrer Relevanz für die Gewährleistung der Unversehrtheit der Passagiere, kann eine Redundanz mit Hilfe von mehreren Softwarekomponenten, die auf gleichartigen Prozessoren ausgeführt werden, nicht mehr ausreichend sein.
+ASSIST bietet deshalb auch die Möglichkeit, Anforderungen zur \emph{Dissimilarität} zwischen zugewiesenen Ressourcen zu spezifizieren, um so die Auswirkungen von unentdeckten Fehlern zu minimieren.
 
 Das zweite Fallbeispiel befasst sich mit der Architektur eines Steuersystems für Raumfahrzeuge.
 Hier liegt der Fokus auf der richtigen Behandlung von Softwarekomponenten, die aus mehr als einem Kontrollfluss bestehen und die parallel arbeitenden Kerne moderner Prozessoren ausnutzen \emph{müssen}, um die erforderliche Leistung zu erbringen.
-Darüber hinaus werden hier auch die Herausforderungen eines Systems mit unterschiedlichen Ressourcenkonfigurationen für unterschiedliche Betriebsmodi adressiert.
-In Abhängigkeit von der Flugphase eines Raumfahrzeugs werden die Prozessoren eines Steuersystems beispielsweise unterschiedlich genutzt. 
-Sie können entweder zur Steigerung der Zuverlässigkeit oder zur Erhöhung der Rechenleistung eingesetzt werden, indem notwendige Berechnungen entweder auf mehreren Prozessoren oder nur auf einem Prozessor durchgeführt werden.
-Dieses Fallbeispiel belegt, dass Platzierungen von Softwarekomponenten für die unterschiedlichen Ressourcenkonfigurationen in kurzer Zeit erstellt und optimiert werden können, so dass sich die Entwicklungszeit eines derartigen Steuersystems signifikant verkürzt.
+Dieses Fallbeispiel belegt, dass Platzierungen von Softwarekomponenten auch für die unterschiedlichen Ressourcenkonfigurationen in kurzer Zeit erstellt und optimiert werden können, so dass sich die Entwicklungszeit eines derartigen Steuersystems signifikant verkürzt.
 
 \section{Gesellschaftliche Bedeutung}
 \label{sec:gesellsch-bede}
