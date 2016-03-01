@@ -72,9 +72,10 @@ Erst die Transformation dieser neuen "`Artefakte"' in Maschinencode und deren An
 Aufgrund dieser Arbeitsteilung ist die Komplexität der zu entwickelnden Systeme durch die menschliche Verarbeitungskapazität begrenzt, denn der Entwickler kann nur eine begrenzte Zahl an Anforderungen an ein neu zu entwickelndes System verarbeiten und diese auch nur mit einer begrenzten Zahl zur Verfügung stehender "`Lösungsbausteine"' in Übereinstimmung bringen. 
 Eine vollständige und fehlerlose Berücksichtigung \emph{aller} Anforderungen bei der Systementwicklung übersteigt bereits heute in vielen Fällen die menschliche Verarbeitungskapazität.
 
-Spätestens mit der Nutzung der neuen \emph{Mehrkernprozessoren} ist die Grenze der durch menschliche Entwickler sicher beherrschbare Komplexität überschritten.
+Spätestens mit der Nutzung der neuen \emph{Mehrkernprozessoren} ist die Grenze der durch menschliche Entwickler sicher beherrschbaren Komplexität überschritten.
 Während klassische \emph{Einkernprozessoren} die Ausführung von nur \emph{einer} Softwarekomponente zu jedem Zeitpunkt ermöglichten und daher auch nur eine kleine Anzahl an Softwarekomponenten pro Prozessor integriert werden konnte, bieten \emph{Mehrkernprozessoren} aufgrund ihrer deutlich gestiegenen Rechenleistung mehr Flexibilität.   
 Mit Hilfe ihrer unabhängig arbeitenden Rechenkerne ermöglichen sie erstmals eine \emph{parallele Ausführung} verschiedener Softwarekomponenten zur gleichen Zeit, so dass -- zumindest theoretisch -- wesentlich mehr Softwarekomponenten auf einem Prozessor integriert werden können.  
+
 Mittlerweile sind Mehrkernprozessoren mit über 1000 parallel arbeitenden Rechenkernen frei verfügbar.
 Im Vergleich zu den klassischen \emph{Einkernprozessoren} versprechen sie einerseits eine deutliche Steigerung der Rechenleistung bei einem äußerst geringen Energieverbrauch und stellen damit vielversprechende "`Lösungsbausteine"' für die Steuersysteme der Zukunft dar. 
 Andererseits überschreitet eine präzise und vollständige a~priori Abschätzung \emph{aller} Auswirkungen dieser starken Konzentration von Softwarekomponenten auf einem Mehrkernprozessor und der daraus resultierenden Ressourcenkonkurrenz das Vermögen menschlicher Entwickler.
@@ -82,7 +83,7 @@ Sie können die Zuverlässigkeit eines Systementwurfs auf Basis von Mehrkernprozes
 
 Derart hochkomplexe Systeme führen nicht nur die menschliche Entwicklungsarbeit an ihre Grenzen.
 Auch die automatisierten Verfahren zum Testen der Neuentwicklungen sind dieser hohen Komplexität nicht mehr vollumfänglich gewachsen.
-Wurde bisher die Korrektheit eines Systems durch die extrinsische Beobachtung seines funktionalen Verhaltens getestet, genügt dies heute nicht mehr.
+Wurde bisher die Korrektheit eines Systems durch die externe Beobachtung seines funktionalen Verhaltens getestet, genügt dies heute nicht mehr.
 Die Zeit, die dann für die Prüfung aller System"= und Umgebungszustände benötigt werden würde, übersteigt die vorgesehene Entwicklungszeit häufig um ein Vielfaches.
 Daher lässt sich der Nachweis über die \emph{vollständige} Korrektheit eines Steuersystems unter \emph{allen} Randbedingungen nicht mehr allein durch die Beobachtung von dessen Verhalten erbringen.
 
@@ -90,10 +91,10 @@ Dies bedeutet, mit Blick auf die gewachsenen Ansprüche an die Funktionalität und
 Ihre Weiterentwicklung ist die Voraussetzung, um auch zukünftig effiziente Steuersysteme mit einem erweiterten Funktionsumfang bei gleichzeitiger Aufrechterhaltung einer hohen Zuverlässigkeit zu konstruieren.
 
 Ein vielversprechender Ansatz zur Lösung dieser Problematik liegt in der \emph{Automatisierung} der kreativ"=konstruktiven Tätigkeiten. 
-Dies bricht mit der traditionellen Arbeitsteilung in der Entwicklung.
+Dies bricht mit der traditionellen Arbeitsteilung zwischen Mensch und Computer bei der Entwicklung.
 Bei diesem Ansatz besteht die Aufgabe des menschlichen Entwicklers darin, die Anforderungen an das zu entwickelnde Steuersystem vollständig, präzise und fehlerfrei zu beschreiben und dem Computer damit einen "`Rahmen"' vorzugeben, innerhalb dessen er unter Zuhilfenahme der verfügbaren Lösungsbausteine automatisiert ein geeignetes "`Artefakt"' konstruiert, das alle gestellten Anforderungen erfüllt.
 
-Vorteile dieses Ansatzes liegen zum einen darin, dass Computer in der Lage sind, die gestellten Anforderungen \emph{vollständiger} und \emph{präziser} mit den technischen Möglichkeiten in Übereinkunft zu bringen.
+Vorteile des neuen Ansatzes liegen zum einen darin, dass Computer in der Lage sind, die gestellten Anforderungen \emph{vollständiger} und \emph{präziser} mit den technischen Möglichkeiten in Übereinkunft zu bringen.
 Die Grenze der beherrschbaren Komplexität lässt sich damit nach oben verschieben.
 Zum anderen eröffnet die Automatisierung der Konstruktion die Möglichkeit, die Korrektheit eines Systems auf der Grundlage seines Konstruktionsprozesses zu beurteilen anstatt dafür eine unvollständige Beobachtung des Systemverhaltens zu verwenden.
 Daher ist die Automatisierung der kreativ"=konstruktiven Tätigkeiten eine lohnende Herausforderung für die ingenieurwissenschaftliche Forschung im Bereich der Systementwicklung, um die Weiterentwicklung von Steuersystemen zu ermöglichen und auch zukünftig deren Zuverlässigkeit zu gewährleisten.  
@@ -281,28 +282,29 @@ Einerseits erlaubt dies eine Erweiterung der Funktionalität eines Steuersystems,
 Andererseits wird mit Hilfe des Werkzeugs auch eine effizientere Nutzung "`teurer"' Ressourcen ermöglicht, so dass neben den Materialkosten auch der Energieverbrauch und das Gewicht eines Steuersystems reduziert werden können.
 Dies resultiert -- insbesondere im Bereich der Luft"= und Raumfahrt -- in signifikanten Einsparungen beim benötigten Treibstoff sowie deutlich reduzierten $CO_2$ Emissionen.
 
-Die hohe Bedeutung der Ergebnisse für die Industrie in der Luft"= und Raumfahrt wird unter anderem auch durch den derzeitigen Einsatz des Werkzeugs bei einem großen Hersteller ziviler Verkehrsflugzeuge unterstrichen.
-Mit Hilfe des Werkzeugs sind hier erstmals tiefgreifende Optimierungen in der Architektur existierender Steuersysteme zugänglich, die bisher aufgrund ihrer Komplexität und einer daraus resultierenden Unsicherheit bezüglich ihrer Realisierbarkeit vermieden wurden.
+Die hohe Bedeutung der Ergebnisse für die Industrie in der Luft"= und Raumfahrt wird unter anderem auch durch den derzeitigen Einsatz des vom Autor entwickelten Werkzeugs bei einem großen Hersteller ziviler Verkehrsflugzeuge unterstrichen.
+Mit dessen Hilfe sind hier erstmals tiefgreifende Optimierungen in der Architektur existierender Steuersysteme zugänglich, die bisher aufgrund ihrer Komplexität und einer daraus resultierenden Unsicherheit bezüglich ihrer Realisierbarkeit vermieden wurden.
 
 Das im Rahmen der Dissertation entwickelte Softwarewerkzeug ASSIST ist im Internet unter der Adresse \url{http://assist.hilbri.ch} frei verfügbar.
 Auch der Quellcode für die im Werkzeug enthaltenen Algorithmen und Transformationen ist unter einer \emph{Open Source} Lizenz im Internet veröffentlicht, so dass \emph{jeder} von den Ergebnissen profitieren kann.
 Der nächste Schritt zur Dissemination der Ergebnisse besteht in der Gründung eines Industriekonsortiums zur Förderung der Weiterentwicklung des Werkzeugs unter dem Dach der gemeinnützigen \emph{Eclipse Foundation}.
 
 Neben der Relevanz der Ergebnisse für die zukünftige Weiterentwicklung unserer Fahrzeuge, ist die zugrunde liegende Dissertation auch ein geeigneter Ausgangspunkt, um Fragen nach der \emph{Beherrschbarkeit heutiger Technologien} zu stellen und den oben genannten technisch"=industriellen Nutzen vor dem Hintergrund \emph{gesellschaftlicher Wirkungen und Risiken} zu bewerten.
-Je stärker der Computer für die Durchführung von kreativ"=konstruktiven Tätigkeiten eingesetzt wird, um so wichtiger wird die Betrachtung möglicher Auswirkungen sowohl auf den einzelnen Entwickler und als auch auf die Gesellschaft.
+Je stärker der Computer für die Durchführung von kreativ"=konstruktiven Tätigkeiten eingesetzt wird, um so wichtiger wird die Betrachtung möglicher Auswirkungen -- sowohl auf den einzelnen Entwickler und als auch auf die Gesellschaft.
 
 Verkürzte Entwicklungszeiten mögen in einem ökonomischen Kontext sinnvoll und vorteilhaft sein, doch welche Auswirkungen hat diese Verkürzung auf die "`Kompetenz"' des einzelnen Entwicklers?
 Wird dieser auch in Zukunft seine entwickelten Systeme in aller Tiefe "`verstehen"' und deren Zuverlässigkeit beurteilen können?
 Wird er weiterhin über die zeitliche Ressourcen verfügen, um ein tiefgreifendes Verständnis zu den internen Abhängigkeiten zu entwickeln und die Auswirkungen von grundlegenden Entwurfsentscheidungen zu bewerten?
 Die Einführung von automatisierten Konstruktionsprozessen ist in jedem Fall mit einer Standardisierung der Entwicklung gleichzusetzen. 
 Dies kann viele Vorteile für die Qualität und Zuverlässigkeit der entwickelten Systeme bringen.
-Sprunghafte technologische Weiterentwicklungen als Folge eines individuellen "`Geistesblitzes"' oder "`Out"=Of"=The"=Box"=Thinking"' sind mit einem derartigen Vorgehen allerdings deutlich unwahrscheinlicher.
+Sprunghafte technologische Weiterentwicklungen als Folge eines individuellen "`Geistesblitzes"' oder "`Out"=Of"=The"=Box"=Thinking"' sind mit einem derartigen Vorgehen allerdings unwahrscheinlicher.
 
-Als Konsequenz einer zunehmenden Verwendung von standardisierten "`Konstruktionsalgorithmen"' sind die Auswirkungen von unentdeckten Fehlern in diesen Algorithmen wesentlich brisanter, denn sie betreffen eine wesentlich größere Gruppe Systemen.
-Während die Ingenieurwissenschaften bereits heute bei der Entwicklung von (Einzel-) Systemen an den Grenzen der beherrschbaren Komplexität agieren, muss kritisch hinterfragt werden, ob die Entwicklung von derartigen "`Konstruktionsalgorithmen"' für eine ganze Klasse an Systemen mit der erforderlichen Fehlerfreiheit zu leisten ist. 
+Als Konsequenz einer zunehmenden Verwendung von standardisierten "`Konstruktionsalgorithmen"' sind die Auswirkungen von unentdeckten Fehlern in diesen Algorithmen wesentlich brisanter, denn sie betreffen gleichzeitig eine wesentlich größere Gruppe von Systemen.
+Kleine Unachtsamkeiten bei der Entwicklung dieser "`Konstruktionsalgorithmen"' können aufgrund ihrer breiten Verwendung zu fatalen Ausfällen in einer neuen Größenordnung führen.
+Da die Ingenieurwissenschaften bereits heute bei der Entwicklung von (Einzel-) Systemen an den Grenzen der beherrschbaren Komplexität agieren, muss kritisch hinterfragt werden, ob die Entwicklung von derartigen "`Konstruktionsalgorithmen"' für eine ganze Klasse von sicherheitskritischen Systemen mit der erforderlichen Fehlerfreiheit zu leisten ist. 
 
 Es sollte zum Standard einer wissenschaftlichen Informatik gehören, diese Janusköpfigkeit zwischen dem technologischen Fortschritt auf der einen Seite und dem Risiko einer automatisierten Systementwicklung auf der anderen Seite für die Gesellschaft zu untersuchen.
-Die Ergebnisse dieser Arbeit -- und insbesondere das Werkzeug ASSIST -- bieten sich dazu als konkreter Untersuchungsgegenstand an.
+Die Ergebnisse dieser Arbeit -- und insbesondere das Werkzeug ASSIST -- bieten sich dazu als konkreter Untersuchungs"= und Diskussionsgegenstand an.
 
 
 \end{document}
